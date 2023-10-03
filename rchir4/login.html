@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин мороженого</title>
+    <link rel="icon" type="image/png" href="favicon.png"> 
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Montserrat+Alternates:wght@100;500&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="logo.png" alt="logo" width="119" length="119">
+            </div>
+            <ul>
+                <li><a href="/index.html">Главная</a></li> 
+                <li><a href="/login.html">Войти</a></li>    
+                <li><a href="/catalog.html">Каталог</a></li>
+                <li><a href="/info.html">О нас</a></li>
+                <li><a href="/trash.html">Корзина</a> </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <form action="" method="get">
+            <p>
+                <label for="name">Введите имя</label>
+                <input for="" type="text" name="name" id="name" required placeholder="Иван">
+
+            </p>
+            <p>
+                <label for="email">Введите email</label>
+                <input for="" type="email" name="email" id="email" placeholder="email@co.ru">
+            </p>
+            <p>
+                <label for="tel">Введите телефон</label>
+                <input for="" type="tel" name="tel" id="tel" placeholder="+79812342314">
+            </p>
+            <p>
+                <label for="password">Введите пароль</label>
+                <input for="" type="password" name="password" id="password" >
+            </p>
+            <p>
+                <label for="file">Прикрепите файл к отправке</label>
+                <input for="" type="file" name="file" id="file">
+            </p>
+            <p>
+                <label for="checkbox">Есть медкнижка</label>
+                <input for="" type="checkbox" name="checkbox" id="checkbox" checked></label>
+            </p>
+            <fieldset>
+                <legend>Сколько?</legend>
+                <label for="radio">
+                    <input type="radio" name="answer" value="one">Один</label>
+                <label for="radio">
+                    <input type="radio" name="answer" value="two">Два</label>
+                <label for="radio">
+                    <input type="radio" name="answer" value="three">Три</label>
+                
+            </fieldset>
+            <p>
+                <label for="date">Введите дату</label>
+                <input 
+                    type="datetime-local" 
+                    name="date" 
+                    id="date" 
+                    min="2004-04-03" 
+                    max="2004-04-09">
+            </p>
+            <!-- <p>
+                <label for="submit"></label>
+                <input for="" type="submit" name="submit" id="submit"></label>
+            </p> -->
+            <p>
+                <label>Расскажите о себе</label><br>
+                    <textarea id="about" name="about" cols="35" rows="7" maxlength="10" placeholder="пупупу" required></textarea>
+                
+            </p>
+
+            <p>Ваш город <br>
+                <select name="city" id="city-select" multiple required size="2">
+                    <option value="moscow">Москва</option>
+                    <option value="petersburg">Санкт-Петербург</option>
+                    <option value="omsk">Омск</option>
+
+                </select>
+            </p>
+            
+            
+            <button type="submit"> Отправить</button>
+        </form>
+    </main>
+
+    <!-- Нижняя часть сайта -->
+    <footer>
+        <div class="contacts">
+            <address>
+                <p>Мобильный телефон: 
+                <a href="tel:+79851250692">+79851250692</a> </br></p>
+                <p>Почтовый адрес: <a href="mailto:al.vor.ya@ru">al.vor.ya@ru</a></p>
+            </address>
+        </div>
+        
+        <div class="designer">
+            <i>Designed by Aleksander Vorobjev </i></br>
+            <i>imaginated by Gevork Melikfashyan</i>
+        </div> 
+        
+
+    </footer>
+    
+</body>
+</html>
+

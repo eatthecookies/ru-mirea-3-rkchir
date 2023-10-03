@@ -1,0 +1,194 @@
+/* Общие настройки страницы */
+
+html{
+    background-color:  #000000 ;
+    color: #142c4d;
+    font-family: 'Nunito Sans', sans-serif;    
+
+    margin:0 0;
+}
+body{
+    margin: 0 0;
+    background-color:#f9f9f9;
+
+}
+
+input:focus{
+    background-color: #d9e7fb;
+}
+
+
+.video, .map
+{
+    margin: 5%;
+    display: flex;   
+    justify-content: center;
+    
+}
+fieldset, textarea{
+    border-color: #00539f;
+    border-radius: 1em;
+}
+
+::placeholder{
+    font-style: italic;
+    color: #81b1e0;
+}
+
+fieldset{
+    width: fit-content;
+}
+
+header{
+    background-color:#2a3037eb;
+    position: sticky;
+    top:0px;
+}
+
+main{
+    padding: 0 2%;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+footer{
+    background-color: #32373c;
+    
+}
+
+.contacts{
+    padding: 5px 0;
+    text-align: right;
+    line-height: 2px ;
+    font-size: 17px;
+    color:rgb(255, 255, 255);
+}
+.designer{
+    background-color: #000000;
+    color:rgb(114, 114, 114);
+    padding: 1px 0;
+    line-height: 20px ;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+
+
+article{
+    display:flex;
+    justify-content: center;
+}
+
+/* Настроки заголовков */
+h1, h2, h3
+{
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+    color: #00539f;
+    text-shadow: 1px 3px 1px rgb(17, 223, 233);   
+}
+
+h2 {font-size: 40px;}
+
+h3 {font-size: 35px;}
+
+
+/* ─── Плавающая Навигация ────────────────────────────────────────────────── */
+
+.logo{
+    position: absolute;
+    top: 0;
+    right: 100px;
+}
+a{
+    color: #2281da;
+}   
+
+.logo, .top-bar{
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+.top-bar a{
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 35px;
+    color: #549bdf;
+    font-family: 'Nunito Sans', sans-serif;    
+}
+
+.top-bar li{
+    display: inline-block;
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 40px;
+}
+
+.top-bar a:hover {
+    color:#e9e7e7;
+}
+
+.up{
+    position: fixed;
+    bottom: 4%;
+    right:3%;
+}
+/* ────────────────────────────────────────────────────────────────────────── */
+
+
+
+
+/* Настройки изображений */
+
+.image1{
+    
+    float:right;
+    margin-left:1rem;
+    /* box-shadow: 0 6px 10px #d60000; */
+    border-width:10px;
+    border-color: #00539f;
+}
+
+
+.image2{
+    margin-top: 15px;
+    float:left;
+    margin-left:2rem;
+}
+/*----------------------------*/
+
+
+/* Оформление стихотворения */ 
+section > blockquote > pre{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+
+.products, .description-list {
+    display: inline-block;
+    vertical-align: top;     
+    width: 45%; 
+    margin-right: 2%; 
+    box-sizing: border-box; 
+}
+
+/* Дополнительные стили (можете настроить по вашему усмотрению) */
+.products {
+    padding-bottom: 20px;
+}
+
+
+
+
+
+.description-list {
+    font-size: 16px;
+}
+
