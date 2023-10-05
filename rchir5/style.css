@@ -7,13 +7,20 @@ html{
     color: #142c4d;
     font-family: 'Nunito Sans', sans-serif;    
 
-    margin:0;
+    margin: 0;
+    padding: 0;
 }
 
 body{
     margin: 0;
+    padding: 0;
     background-color:#f9f9f9;
+}
 
+main{
+    padding: 0 5%;
+    margin-top: 0;
+    font-size: 1.2rem;
 }
 
 input:focus{
@@ -45,27 +52,22 @@ fieldset{
 header{
     background-color:#2a3037eb;
     position: sticky;
-    top:0px;
-}
-
-main{
-    padding: 0 2%;
-    margin-top: 0;
-    font-size: 18px;
+    top: 0px;
+    
 }
 
 footer{
     background-color: #32373c;
-    
 }
 
 .contacts{
     padding: 5px 0;
     text-align: right;
     line-height: 2px ;
-    font-size: 17px;
+    font-size: 1rem;
     color:rgb(255, 255, 255);
 }
+
 .designer{
     background-color: #000000;
     color:rgb(114, 114, 114);
@@ -76,12 +78,8 @@ footer{
 
 
 
-article{
-    display:flex;
-    justify-content: center;
-}
+/* ─── Настроки Заголовков ────────────────────────────────────────────────── */
 
-/* Настроки заголовков */
 h1, h2, h3
 {
     font-family: 'Montserrat Alternates', sans-serif;
@@ -89,24 +87,24 @@ h1, h2, h3
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 1.5rem;
     text-align: center;
     margin: 0;
     color: #00539f;
     text-shadow: 1px 3px 1px rgb(17, 223, 233);   
 }
 
-h2 {font-size: 40px;}
+h2 {font-size: 2rem;margin-bottom: 0;}
 
-h3 {font-size: 35px;}
+h3 {font-size: 1.7rem;margin-bottom: 0;}
 
 
 /* ─── Плавающая Навигация ────────────────────────────────────────────────── */
 
 .logo{
     position: absolute;
-    top: 0;
-    right: 100px;
+    top: 10px;
+    right: 100px
 }
 a{
     color: #2281da;
@@ -115,6 +113,11 @@ a{
 .logo, .top-bar{
     display: inline-block;
     vertical-align: middle; 
+}
+
+
+.top-bar{
+    padding: 0;
 }
 
 .top-bar a{
@@ -128,6 +131,7 @@ a{
 .top-bar li{
     display: inline-block;
     padding: 20px;
+    
     margin-left: 40px;
     margin-right: 40px;
     border-radius: 40px;
@@ -152,51 +156,95 @@ a{
 .image1{
     float:right;
     margin-left:1rem;
+    margin-top: 20px;
     border-width:10px;
     border-color: #00539f;
+    max-width: 100%;
+    height: auto;
 }
-
 
 .image2{
-    display: flex;
-    /* float:left; */
-    /* margin-left:2rem; */
+    float:left;
+    padding-top: 15px;
 }
+
 /*----------------------------*/
 
 
 /* Оформление стихотворения */ 
+blockquote{
+    margin: 0;
+    padding: 0;
+}
 blockquote > pre{
-    display: flex;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 15px;
+    font-family: Georgia;
+    font-size: 1rem;
 }
-
-
-.A-section, .B-section, .C-section, .D-section, .E-section{
-    display: flex;
-}
-
-
 
 .C-section, .D-section {
+    display: flex;
+    flex-flow: column wrap-reverse;
+    width: 45%; 
+    margin-right: 2%;  
+    min-width: 300px;
+    flex-grow: 1;
+} 
+
+.C-D-section{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.A-section p{
+    min-height: 243px;
+
+}
+
+.E-section{
+    display: flex;
+    flex-flow: row wrap; justify-content: center;
+}
+
+@media screen and (max-width: 800px){
+    .A-section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (max-width: 1000px){
+    .E-section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .E-section{
+        overflow: scroll;
+    }
+}
+/* 
+.A-section, .B-section, .C-section, .D-section, .E-section{
+    display: flex;
+} */
+
+
+/* 
+.C-section, .D-section {
     display: inline-block;
-    /* vertical-align: top;     
+    vertical-align: top;     
     width: 45%; 
     margin-right: 2%; 
-    box-sizing: border-box;  */
-}
+    box-sizing: border-box; 
+} */
 
 /* Дополнительные стили (можете настроить по вашему усмотрению) */
-.C-section {
+/* .C-section {
     padding-bottom: 20px;
-}
+} */
 
-
-
-
-
-.description-list {
-    font-size: 16px;
-}
 
