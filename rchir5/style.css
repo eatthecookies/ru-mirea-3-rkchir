@@ -1,3 +1,5 @@
+
+
 /* Общие настройки страницы */
 
 html{
@@ -5,10 +7,11 @@ html{
     color: #142c4d;
     font-family: 'Nunito Sans', sans-serif;    
 
-    margin:0 0;
+    margin:0;
 }
+
 body{
-    margin: 0 0;
+    margin: 0;
     background-color:#f9f9f9;
 
 }
@@ -147,40 +150,45 @@ a{
 /* Настройки изображений */
 
 .image1{
-    
     float:right;
     margin-left:1rem;
-    /* box-shadow: 0 6px 10px #d60000; */
     border-width:10px;
     border-color: #00539f;
 }
 
 
 .image2{
-    margin-top: 15px;
-    float:left;
-    margin-left:2rem;
+    display: flex;
+    /* float:left; */
+    /* margin-left:2rem; */
 }
 /*----------------------------*/
 
 
 /* Оформление стихотворения */ 
-section > blockquote > pre{
+blockquote > pre{
+    display: flex;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 15px;
 }
 
 
-.products, .description-list {
+.A-section, .B-section, .C-section, .D-section, .E-section{
+    display: flex;
+}
+
+
+
+.C-section, .D-section {
     display: inline-block;
-    vertical-align: top;     
+    /* vertical-align: top;     
     width: 45%; 
     margin-right: 2%; 
-    box-sizing: border-box; 
+    box-sizing: border-box;  */
 }
 
 /* Дополнительные стили (можете настроить по вашему усмотрению) */
-.products {
+.C-section {
     padding-bottom: 20px;
 }
 
