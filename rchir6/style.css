@@ -1,0 +1,430 @@
+
+
+/* ─── Переменные ─────────────────────────────────────────────────────────── */
+
+:root{
+    --bar-width: 60px;
+    --bar-height: 8px;
+    --hamburger-gap: 6px;
+    --foreground: #f9f9f9;
+    --background: #32373c;
+    --hamburger-margin: 5px;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu{
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+    
+    display: none;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: 37px;
+    left:35px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input{
+    content:"";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--foreground);
+    border-radius: 100px;
+    transform-origin: left center;
+    
+    transition: 
+            opacity var(--animation-timing), 
+            width var(--animation-timing),
+            rotate var(--animation-timing), 
+            translate var(--animation-timing),
+            background-color var(--animation-timing);
+}
+
+.hamburger-menu input{
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    outline:none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before{
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after{
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked{
+    opacity: 0;
+    width: 0;
+}
+
+.hamburger-menu:has(input:checked){
+    --foreground: #f9f9f9;
+    --background: #32373c;
+}
+
+
+.sidebar{
+    translate: -100%;
+    transition: translate var(--animation-timing);
+    margin-top: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    min-width: 10rem;
+    min-height: 100vh;
+    padding: 5rem 7rem;
+    display: flex;
+    z-index: 2;
+}
+
+.sidebar li{
+    font-family: 'Nunito Sans', sans-serif; 
+    display: flex;
+    width: max-content;
+    padding-top:20px;
+    
+}
+.sidebar a{
+    text-decoration: none;
+    font-size: 35px;
+    color: #549bdf;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar{
+    translate: 0;
+}
+
+
+
+.logo, .top-bar{
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+
+.top-bar{
+    padding: 0;
+}
+
+.top-bar a{
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 35px;
+    color: #549bdf;
+    font-family: 'Nunito Sans', sans-serif;    
+}
+
+.top-bar li{
+    display: inline-block;
+    padding: 20px;
+    
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 40px;
+}
+
+
+
+/* ─── Общие Настройки Страницы ───────────────────────────────────────────── */
+
+html{
+    background-color:  #000000 ;
+    color: #142c4d;
+    font-family: 'Nunito Sans', sans-serif;    
+
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color:#f9f9f9;
+}
+
+main{
+    padding: 0 5%;
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.video, .map
+{
+    margin: 5%;
+    display: flex;   
+    justify-content: center;
+    
+}
+fieldset, textarea{
+    border-color: #00539f;
+    border-radius: 1em;
+}
+
+::placeholder{
+    font-style: italic;
+    color: #81b1e0;
+}
+
+fieldset{
+    width: fit-content;
+}
+
+header{
+    background-color:#2a3037eb;
+    position: sticky;
+    top: 0px;
+    max-height: 115px;
+}
+
+footer{
+    background-color: #32373c;
+}
+
+.contacts{
+    padding: 5px 0;
+    text-align: right;
+    line-height: 2px ;
+    font-size: 1rem;
+    color:rgb(255, 255, 255);
+}
+
+.designer{
+    background-color: #000000;
+    color:rgb(114, 114, 114);
+    padding: 1px 0;
+    line-height: 20px ;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+
+
+/* ─── Настроки Заголовков ────────────────────────────────────────────────── */
+
+h1, h2, h3
+{
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    color: #00539f;
+    text-shadow: 1px 3px 1px rgb(17, 223, 233);   
+}
+
+h2 {font-size: 2rem;margin-bottom: 0;}
+
+h3 {font-size: 1.7rem;margin-bottom: 0;}
+
+
+/* ─── Плавающая Навигация ────────────────────────────────────────────────── */
+
+.logo{
+    position: absolute;
+    top: 10px;
+    right: 100px
+}
+
+a{
+    color: #2281da;
+}   
+
+.logo, .top-bar{
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+
+.top-bar{
+    padding: 0;
+}
+
+.top-bar a{
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 35px;
+    color: #549bdf;
+    font-family: 'Nunito Sans', sans-serif;    
+}
+
+.top-bar li{
+    display: inline-block;
+    padding: 20px;
+    
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 40px;
+}
+
+.top-bar a:hover {
+    color:#e9e7e7;
+}
+
+.up{
+    position: fixed;
+    bottom: 4%;
+    right:3%;
+}
+/* ────────────────────────────────────────────────────────────────────────── */
+
+
+
+
+/* ─── Настройки Изображений ──────────────────────────────────────────────── */
+
+.image1{
+    float:right;
+    margin-left:1rem;
+    margin-top: 20px;
+    border-width:10px;
+    border-color: #00539f;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+.image2{
+    float:left;
+    padding-top: 15px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+/* ─── Оформление Стихотворения ───────────────────────────────────────────── */
+
+blockquote{
+    margin: 0;
+    padding: 0;
+}
+blockquote > pre{
+    font-family: Georgia;
+    font-size: 1rem;
+}
+
+.C-section, .D-section {
+    display: flex;
+    flex-flow: column wrap-reverse;
+    width: 45%; 
+    margin-right: 2%;  
+    min-width: 300px;
+    flex-grow: 1;
+} 
+
+.C-D-section{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.A-section p{
+    min-height: 243px;
+
+}
+
+.E-section{
+    display: flex;
+    flex-flow: row wrap; justify-content: center;
+}
+
+@media screen and (max-width: 800px){
+    .A-section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (max-width: 1000px){
+    .E-section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .E-section{
+        overflow: scroll;
+    }
+    h1{
+        font-size: 40px;
+        overflow:auto;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .A-section, .B-section, .C-section, .D-section, .E-section, footer{
+        font-size: 10px;
+        padding: 0;
+    }
+
+   
+    h2{
+        font-size: larger;
+        overflow:auto;
+    }
+    h3{
+        font-size: large;
+        overflow:auto;
+    }
+    
+}
+
+.sidebar{
+    display: none;
+}
+
+@media screen and (max-width: 1350px){
+    .hamburger-menu{
+        display: flex;
+    }
+    .points, .logo
+    {
+        visibility: hidden;
+        display: none;
+    }
+    .sidebar{
+        display:block;
+    }
+    
+}
+
+
+/* ─── Галлерея ───────────────────────────────────────────────────────────── */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.image {
+    margin: 10px;
+    max-width: 400px;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.445);
+;
+}
+
