@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин мороженого</title>
-    <link rel="icon" type="image/png" href="favicon.png"> 
+    <link rel="icon" type="image/png" href="images/favicon.png"> 
     <link href="style.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,16 +14,30 @@
 </head>
 <body>
     <header>
+        <label class="hamburger-menu">
+            <input type="checkbox">
+        </label>
+        <ul class="sidebar">
+            <li><a href="index.html">Главная</a></li>   
+            <li><a href="login.html">Войти</a></li>    
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="info.html">О нас</a></li>
+            <li><a href="trash.html">Корзина</a> </li>
+            <li><a href="gallery.html">Галерея</a> </li>
+        </ul>
+
         <div class="top-bar">
             <div class="logo">
-                <img src="logo.png" alt="logo" width="119" length="119">
+                <img src="images/logo.png" alt="logo" width="100" length="100">
             </div>
-            <ul>
-                <li><a href="index.html">Главная</a></li> 
+
+            <ul class="points">
+                <li><a href="index.html">Главная</a></li>   
                 <li><a href="login.html">Войти</a></li>    
                 <li><a href="catalog.html">Каталог</a></li>
                 <li><a href="info.html">О нас</a></li>
                 <li><a href="trash.html">Корзина</a> </li>
+                <li><a href="gallery.html">Галерея</a> </li>
             </ul>
         </div>
     </header>

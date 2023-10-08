@@ -5,45 +5,45 @@
 :root{
     --bar-width: 60px;
     --bar-height: 8px;
-    --hamburger-gap:6px;
-    --foreground: white;
-    --background: #f9f9f9;
-    --transform-origin: left center;
+    --hamburger-gap: 6px;
+    --foreground: #f9f9f9;
+    --background: #32373c;
     --hamburger-margin: 5px;
     --animation-timing: 200ms ease-in-out;
-    --hamburger-height: calc(var(--bar-height) * 3+ var(--hamburger-gap) *2);
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
-.hamburger-menu input:checked{
-    opacity: 0;
-    width: 0;
+.hamburger-menu{
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+    
+    display: none;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: 37px;
+    left:35px;
+    z-index: 3;
+    cursor: pointer;
 }
 
-.hamburger-menu:has(input:checked)::before{
-    rotate: 45deg;
-}
 
-.hamburger-menu:has(input:checked)::after{
-    rotate: -45deg;
-}
-
-.hamburger-menu::after,.hamburger-menu::before, .hamburger-menu input{
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input{
     content:"";
     width: var(--bar-width);
     height: var(--bar-height);
     background-color: var(--foreground);
     border-radius: 100px;
-}
-.hamburger-menu{
-    display: flex;
-    flex-direction: column;
-    gap: var(--hamburger-gap);
-    width: max-content;
-    position: absolute;
-    top:5;
-    left:10px;
-    z-index: 2;
-    cursor: pointer;
+    transform-origin: left center;
+    
+    transition: 
+            opacity var(--animation-timing), 
+            width var(--animation-timing),
+            rotate var(--animation-timing), 
+            translate var(--animation-timing),
+            background-color var(--animation-timing);
 }
 
 .hamburger-menu input{
@@ -52,12 +52,93 @@
     padding: 0;
     outline:none;
     pointer-events: none;
-    transition: opacity var(--animation-timing), width var(--animation-timing);
+}
+
+.hamburger-menu:has(input:checked)::before{
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after{
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked{
+    opacity: 0;
+    width: 0;
+}
+
+.hamburger-menu:has(input:checked){
+    --foreground: #f9f9f9;
+    --background: #32373c;
+}
+
+
+.sidebar{
+    translate: -100%;
+    transition: translate var(--animation-timing);
+    margin-top: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    min-width: 10rem;
+    min-height: 100vh;
+    padding: 5rem 7rem;
+    display: flex;
+    z-index: 2;
+}
+
+.sidebar li{
+    font-family: 'Nunito Sans', sans-serif; 
+    display: flex;
+    width: max-content;
+    padding-top:20px;
+    
+}
+.sidebar a{
+    text-decoration: none;
+    font-size: 35px;
+    color: #549bdf;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar{
+    translate: 0;
 }
 
 
 
-/* Общие настройки страницы */
+.logo, .top-bar{
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+
+.top-bar{
+    padding: 0;
+}
+
+.top-bar a{
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 35px;
+    color: #549bdf;
+    font-family: 'Nunito Sans', sans-serif;    
+}
+
+.top-bar li{
+    display: inline-block;
+    padding: 20px;
+    
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 40px;
+}
+
+
+
+/* ─── Общие Настройки Страницы ───────────────────────────────────────────── */
 
 html{
     background-color:  #000000 ;
@@ -79,11 +160,6 @@ main{
     margin-top: 0;
     font-size: 1.2rem;
 }
-
-input:focus{
-    background-color: #d9e7fb;
-}
-
 
 .video, .map
 {
@@ -110,7 +186,7 @@ header{
     background-color:#2a3037eb;
     position: sticky;
     top: 0px;
-    min-height: 60px;
+    max-height: 115px;
 }
 
 footer{
@@ -144,7 +220,7 @@ h1, h2, h3
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 4rem;
     text-align: center;
     margin: 0;
     color: #00539f;
@@ -163,6 +239,7 @@ h3 {font-size: 1.7rem;margin-bottom: 0;}
     top: 10px;
     right: 100px
 }
+
 a{
     color: #2281da;
 }   
@@ -208,7 +285,7 @@ a{
 
 
 
-/* Настройки изображений */
+/* ─── Настройки Изображений ──────────────────────────────────────────────── */
 
 .image1{
     float:right;
@@ -228,10 +305,11 @@ a{
     max-height: 100%;
 }
 
-/*----------------------------*/
 
 
-/* Оформление стихотворения */ 
+
+/* ─── Оформление Стихотворения ───────────────────────────────────────────── */
+
 blockquote{
     margin: 0;
     padding: 0;
@@ -286,35 +364,67 @@ blockquote > pre{
     .E-section{
         overflow: scroll;
     }
+    h1{
+        font-size: 40px;
+        overflow:auto;
+    }
 }
 
+@media screen and (max-width: 350px){
+    .A-section, .B-section, .C-section, .D-section, .E-section, footer{
+        font-size: 10px;
+        padding: 0;
+    }
+
+   
+    h2{
+        font-size: larger;
+        overflow:auto;
+    }
+    h3{
+        font-size: large;
+        overflow:auto;
+    }
+    
+}
+
+.sidebar{
+    display: none;
+}
 
 @media screen and (max-width: 1350px){
-    .points,.logo
+    .hamburger-menu{
+        display: flex;
+    }
+    .points, .logo
     {
         visibility: hidden;
         display: none;
     }
+    .sidebar{
+        display:block;
+    }
     
 }
-/* 
-.A-section, .B-section, .C-section, .D-section, .E-section{
+
+
+/* ─── Галлерея ───────────────────────────────────────────────────────────── */
+
+.gallery {
     display: flex;
-} */
+    flex-wrap: wrap;
+    justify-content: center; 
+}
 
+.image {
+    margin: 10px;
+    max-width: 400px;
+}
 
-/* 
-.C-section, .D-section {
-    display: inline-block;
-    vertical-align: top;     
-    width: 45%; 
-    margin-right: 2%; 
-    box-sizing: border-box; 
-} */
-
-/* Дополнительные стили (можете настроить по вашему усмотрению) */
-/* .C-section {
-    padding-bottom: 20px;
-} */
-
+.image img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.445);
+;
+}
 
