@@ -109,33 +109,6 @@
 
 
 
-.logo, .top-bar{
-    display: inline-block;
-    vertical-align: middle; 
-}
-
-
-.top-bar{
-    padding: 0;
-}
-
-.top-bar a{
-    vertical-align: middle;
-    text-decoration: none;
-    font-size: 35px;
-    color: #549bdf;
-    font-family: 'Nunito Sans', sans-serif;    
-}
-
-.top-bar li{
-    display: inline-block;
-    padding: 20px;
-    
-    margin-left: 40px;
-    margin-right: 40px;
-    border-radius: 40px;
-}
-
 
 
 /* ─── Общие Настройки Страницы ───────────────────────────────────────────── */
@@ -265,9 +238,8 @@ a{
 .top-bar li{
     display: inline-block;
     padding: 20px;
-    
     margin-left: 40px;
-    margin-right: 40px;
+    /* margin-right: 40px; */
     border-radius: 40px;
 }
 
