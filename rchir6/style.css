@@ -213,12 +213,16 @@ header{
 }
 .bell{
     position: absolute;
-    right: 100px;
-    top: 20px;
+    right: 15%;
+    /* top: 20px; */
+    height: 115px;
+
 }
 .bell img{
+    margin-top: 20px;
     width: 100%;
-    height: 100%;
+    height: 60%;
+    
 }
 
 .logo{
@@ -242,7 +246,7 @@ header{
     display: block;
     padding: 20px;
     border-radius: 40px;
-    flex-grow: 0.1;
+    flex-shrink: 1;
 }
 
 
@@ -257,6 +261,71 @@ header{
 
 .top-bar a:hover {
     color:#e9e7e7;
+}
+
+
+.bell:hover + #bell-notifications,
+#bell-notifications:hover{
+    display: flex;
+    position: absolute;
+    top: 115px;
+    right: 15%;
+    z-index: 3;
+    font-size: 1.4em;
+    width: max-content;
+    
+    color: white;
+    background: #2a3037eb;
+    border: 1px solid #2a3037;
+}
+
+#bell-notifications ul{
+    border:solid #2a3037;
+    border-width: 1px;
+    width: 100%;
+    
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+#bell-notifications li{
+    border:solid #2a3037;
+    border-width: 1px;
+    border-radius: 0;
+
+    line-height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+#bell-notifications li:hover{
+    border:solid #2a3037;
+    border-width: 1px;
+    border-radius: 30px;
+    scale: 1.1 1.1;
+    background: #067be9c7;
+    line-height: 50px;
+    transition: 0.5s;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#bell-notifications p{
+    margin: 0;
+    padding: 20px 20px;
+    display: inline-block;
+    text-wrap:nowrap;
+    width: max-content;
+    height: 100%;
+}
+
+
+#bell-notifications{
+    display: none;
 }
 
 /* Стрелочка вверх */
@@ -430,21 +499,106 @@ header{
 
 /* ─── Галлерея ───────────────────────────────────────────────────────────── */
 
+.image-and-title #button-2{
+    width: 60%;
+    height: 60%;
+    /* font-size: 100%; */
+    padding: 0;
+}
+
+.image-and-title #button-2 p{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 80%;
+}
+
+@media screen and (max-width: 520px) {
+    
+    .image-and-title #button-2 p{
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-size: 60%;
+    }
+    .image-and-title #button-2{
+        margin-top: 2%;
+        margin-left: 15%;
+    }
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
+    /* grid-template-columns: repeat(3, 1fr); */
+
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.image-and-title {
+    /* height: 100%; */
+    /* width: 100%; */
+    /* ПОЧЧЕЧЕММУММУМУМУММ????? */
+    
+    margin: 35px;
+    max-width: 500px;
+    transition: 1s;
+    position: relative;
+    overflow: hidden;
 }
 
 .image {
-    margin: 10px;
-    max-width: 400px;
+    height: 100%;
+    width: 100%;
+}
+ 
+.title
+{
+    width: 100%;
+    height: fit-content;
+    display: block;
+
+    opacity: 0;
+
+    color: rgba(255, 255, 255, 0.925);
+    margin-left: 10px;
+    position: absolute;
+    bottom: -100px;
+    left: 10px;
+
+    transition: 0.6s ease-in-out;
 }
 
 .image img {
     width: 100%;
-    height: auto;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.445);
+    height: 100%;
+}
+
+.image::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    background: black;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.image-and-title:hover{
+    transform: translateY(-7%);
+}
+
+.image-and-title:hover .image::before{
+    opacity: 0.7;
+}
+
+.image-and-title:hover .title{
+    opacity: 1;
+    transform: translateY(-30%);
 }
 
 
@@ -459,6 +613,7 @@ header{
         visibility: hidden;
         display: none;
     }
+
     .sidebar{
         display:block;
     }
@@ -467,9 +622,22 @@ header{
         height: 60px;
     }
     .bell{
-        top: 4px;
-        height: 50px;
+        position: absolute;
+        top: 0;
+        height: 60px;
     }
+    .bell img{
+        margin-top: 0;
+        height: 100%;
+    }
+    .bell:hover + #bell-notifications,
+#bell-notifications:hover{
+    
+    position: absolute;
+    top: 60px;
+
+}
+    
 }
 
 @media screen and (max-width: 1000px){
@@ -512,6 +680,9 @@ header{
         font-size: 10px;
         padding: 0;
     }
+    .A-section p {
+        min-height: max-content;
+    }
    
     h2{
         font-size: larger;
@@ -524,3 +695,46 @@ header{
     
 }
 
+
+.video::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: #000000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    margin: 0;
+    padding: 0;
+}
+
+.video-and-title:hover::before {
+    opacity: 0.5; /* Измените на желаемое значение прозрачности */
+}
+
+.title2 {
+    color: #000000;
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 170px;
+}
+
+.title2 p {
+    overflow: visible;
+}
+
+.video {
+    width: fit-content;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.video-and-title {
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
