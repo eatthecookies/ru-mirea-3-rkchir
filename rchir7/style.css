@@ -1,0 +1,771 @@
+
+
+/* ─── Переменные ─────────────────────────────────────────────────────────── */
+
+:root{
+    --bar-width: 60px;
+    --bar-height: 8px;
+    --hamburger-gap: 6px;
+    --foreground: #f9f9f9;
+    --background: #32373c;
+    --hamburger-margin: 5px;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu{
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+    
+    display: none;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: 10px;
+    left: 35px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input{
+    content:"";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--foreground);
+    border-radius: 100px;
+    transform-origin: left center;
+    
+    transition: 
+            opacity var(--animation-timing), 
+            width var(--animation-timing),
+            rotate var(--animation-timing), 
+            translate var(--animation-timing),
+            background-color var(--animation-timing);
+}
+
+.hamburger-menu input{
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    outline:none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before{
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after{
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked{
+    opacity: 0;
+    width: 0;
+}
+
+.hamburger-menu:has(input:checked){
+    --foreground: #f9f9f9;
+    --background: #32373c;
+}
+
+
+.sidebar{
+    translate: -100%;
+    transition: translate var(--animation-timing);
+    margin-top: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    min-width: 10rem;
+    min-height: 100vh;
+    padding: 5rem 7rem;
+    display: flex;
+    z-index: 2;
+}
+
+.sidebar li{
+    font-family: 'Nunito Sans', sans-serif; 
+    display: flex;
+    width: max-content;
+    padding-top:20px;
+    
+}
+
+.sidebar a{
+    text-decoration: none;
+    font-size: 35px;
+    color: #549bdf;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar{
+    translate: 0;
+}
+
+.sidebar{
+    display: none;
+}
+
+/* ─── Общие Настройки Страницы ───────────────────────────────────────────── */
+
+html{
+    background-color:  #000000 ;
+    color: #142c4d;
+    font-family: 'Nunito Sans', sans-serif;    
+
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color:#f9f9f9;
+}
+
+main{
+    padding: 0 5%;
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.video, .map
+{
+    margin: 5%;
+    display: flex;   
+    justify-content: center;
+    
+}
+
+fieldset, textarea{
+    border-color: #00539f;
+    border-radius: 1em;
+}
+
+::placeholder{
+    font-style: italic;
+    color: #81b1e0;
+}
+
+fieldset{
+    width: fit-content;
+}
+
+
+
+footer{
+    background-color: #32373c;
+}
+
+.contacts{
+    padding: 5px 0;
+    text-align: right;
+    line-height: 2px ;
+    font-size: 1rem;
+    color:rgb(255, 255, 255);
+}
+
+.designer{
+    background-color: #000000;
+    color:rgb(114, 114, 114);
+    padding: 1px 0;
+    line-height: 20px ;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+
+
+/* ─── Настроки Заголовков ────────────────────────────────────────────────── */
+
+h1, h2, h3
+{
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    color: #00539f;
+    text-shadow: 1px 3px 1px rgb(17, 223, 233);   
+}
+
+h2 {font-size: 2rem;margin-bottom: 0;}
+
+h3 {font-size: 1.7rem;margin-bottom: 0;}
+
+
+/* ─── Плавающая Навигация ────────────────────────────────────────────────── */
+
+header{
+    background-color:#2a3037eb;
+    position: sticky;
+    top: 0px;
+    height: 115px;
+    z-index: 6;
+}
+.bell{
+    position: absolute;
+    right: 15%;
+    /* top: 20px; */
+    height: 115px;
+
+}
+.bell img{
+    margin-top: 20px;
+    width: 100%;
+    height: 60%;
+    
+}
+
+.logo{
+    position: absolute;
+    top: 10px;
+    left: 100px;
+}
+
+.top-bar{
+    display: flex;
+    
+}
+
+.points{
+    margin-left: 200px;
+    display: flex;
+    width: 100%;
+}
+
+.top-bar li{
+    display: block;
+    padding: 20px;
+    border-radius: 40px;
+    flex-shrink: 1;
+}
+
+
+/* настроки текста */
+.top-bar a{
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 35px;
+    color: #549bdf;
+    font-family: 'Nunito Sans', sans-serif;    
+}
+
+.top-bar a:hover {
+    color:#e9e7e7;
+}
+
+
+.bell:hover + #bell-notifications,
+#bell-notifications:hover{
+    display: flex;
+    position: absolute;
+    top: 115px;
+    right: 15%;
+    z-index: 3;
+    font-size: 1.4em;
+    width: max-content;
+    
+    color: white;
+    background: #2a3037eb;
+    border: 1px solid #2a3037;
+}
+
+#bell-notifications ul{
+    border:solid #2a3037;
+    border-width: 1px;
+    width: 100%;
+    
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+#bell-notifications li{
+    border:solid #2a3037;
+    border-width: 1px;
+    border-radius: 0;
+
+    line-height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+#bell-notifications li:hover{
+    border:solid #2a3037;
+    border-width: 1px;
+    border-radius: 30px;
+    scale: 1.1 1.1;
+    background: #067be9c7;
+    line-height: 50px;
+    transition: 0.5s;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#bell-notifications p{
+    margin: 0;
+    padding: 20px 20px;
+    display: inline-block;
+    text-wrap:nowrap;
+    width: max-content;
+    height: 100%;
+}
+
+
+#bell-notifications{
+    display: none;
+}
+
+/* Стрелочка вверх */
+.up{
+    position: fixed;
+    bottom: 4%;
+    right:3%;
+}
+
+/* ─── Настройки Изображений ──────────────────────────────────────────────── */
+
+.image1{
+    float:right;
+    margin-left:1rem;
+    margin-top: 20px;
+    border-width:10px;
+    border-color: #00539f;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+.image2{
+    float:left;
+    padding-top: 15px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* ─── Оформление Стихотворения ───────────────────────────────────────────── */
+
+
+.C-section, .D-section {
+    display: flex;
+    flex-flow: column wrap-reverse;
+    width: 45%; 
+    margin-right: 2%;  
+    min-width: 300px;
+    flex-grow: 1;
+} 
+
+.C-D-section{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.A-section p{
+    min-height: 243px;
+
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    font-size: 1.4em;
+}
+
+
+/* ─── Оформление Кнопок ──────────────────────────────────────────────────── */
+
+.container-for-button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.button{
+    display: inline-block;
+    width: max-content;
+    padding: 0 2em;
+    height: 2em;
+    font-size: 2em;
+    font-family: 'Nunito Sans', sans-serif; 
+    background: linear-gradient(to left,#00e0ff,#b9b9ff, #ffffff);
+    
+    margin: 1em 2em;
+}
+
+#button-1:hover{
+    background-position: right;
+}
+
+#button-1{
+    border-radius: 1rem;
+    background-size: 250%;
+    transition: .5s;
+}
+ 
+@keyframes rotateGradient {
+    0% {
+      background-position: 0 0; /* Начальная позиция градиента */
+    }
+    100% {
+      background-position: 200% 0; /* Конечная позиция градиента (повернут на 180 градусов) */
+    }
+  }
+
+#button-2:hover{
+    animation: rotateGradient 3s linear infinite;
+    animation-direction: alternate;
+}
+
+#button-2{
+    background-image: linear-gradient(45deg,#009FFF,#ec2F4B);
+    background-size: 250% 150%; 
+    border-radius: 1rem;
+   
+    color: white;
+}
+
+
+#button-3:hover{
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.979);
+    transform: translateY(10px);
+    
+}
+
+#button-3{
+    background: rgb(73, 186, 238);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+
+#button-4{
+    background: rgb(73, 186, 238);
+    border-width: 5px;
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center; 
+}
+
+#button-4 p {
+    vertical-align: middle;    
+    
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    transition: all 1s ease;
+  }
+
+ #button-4::before {
+    content: "";
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    
+    background-color: #fff;
+    transition: all 1s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  #button-4:hover p{
+    color: #0d86f7;
+  }
+
+  #button-4:hover::before {
+    top: 0;
+  }  
+
+
+/* ─── Галлерея ───────────────────────────────────────────────────────────── */
+
+.image-and-title #button-2{
+    width: 60%;
+    height: 60%;
+    /* font-size: 100%; */
+    padding: 0;
+}
+
+.image-and-title #button-2 p{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 80%;
+}
+
+@media screen and (max-width: 520px) {
+    
+    .image-and-title #button-2 p{
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-size: 60%;
+    }
+    .image-and-title #button-2{
+        margin-top: 2%;
+        margin-left: 15%;
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* grid-template-columns: repeat(3, 1fr); */
+
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.image-and-title {
+    /* height: 100%; */
+    /* width: 100%; */
+    /* ПОЧЧЕЧЕММУММУМУМУММ????? */
+    
+    margin: 35px;
+    max-width: 500px;
+    transition: 1s;
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+}
+ 
+.title
+{
+    width: 100%;
+    height: fit-content;
+    display: block;
+
+    opacity: 0;
+
+    color: rgba(255, 255, 255, 0.925);
+    margin-left: 10px;
+    position: absolute;
+    bottom: -100px;
+    left: 10px;
+
+    transition: 0.6s ease-in-out;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+.image::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    background: black;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.image-and-title:hover{
+    transform: translateY(-7%);
+}
+
+.image-and-title:hover .image::before{
+    opacity: 0.7;
+}
+
+.image-and-title:hover .title{
+    opacity: 1;
+    transform: translateY(-30%);
+}
+
+
+/* ─── Медиа-запросы ──────────────────────────────────────────────────────── */
+
+@media screen and (max-width: 1350px){
+    .hamburger-menu{
+        display: flex;
+    }
+    .points, .logo
+    {
+        visibility: hidden;
+        display: none;
+    }
+
+    .sidebar{
+        display:block;
+    }
+    
+    header{
+        height: 60px;
+    }
+    .bell{
+        position: absolute;
+        top: 0;
+        height: 60px;
+    }
+    .bell img{
+        margin-top: 0;
+        height: 100%;
+    }
+    .bell:hover + #bell-notifications,
+#bell-notifications:hover{
+    
+    position: absolute;
+    top: 60px;
+
+}
+    
+}
+
+@media screen and (max-width: 1000px){
+    .E-section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .A-section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container-for-button{
+        font-size: 0.7em;
+    }
+}
+
+
+
+@media screen and (max-width: 500px){
+    .E-section{
+        overflow: scroll;
+    }
+    h1{
+        font-size: 40px;
+        overflow:auto;
+    }
+    .container-for-button{
+        font-size: 0.45em;
+    }
+    
+}
+
+@media screen and (max-width: 350px){
+    .A-section, .B-section, .C-section, .D-section, .E-section, footer{
+        font-size: 10px;
+        padding: 0;
+    }
+    .A-section p {
+        min-height: max-content;
+    }
+   
+    h2{
+        font-size: larger;
+        overflow:auto;
+    }
+    h3{
+        font-size: large;
+        overflow:auto;
+    }
+    
+}
+
+/* 
+.video-and-title{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: #000000;
+
+    transition: opacity 0.3s ease-in-out;
+    margin: 0;
+    padding: 0;
+} */
+
+.catalog
+{
+    padding: 30px;
+}
+
+.video-and-title:hover .title2{
+    opacity: 1; 
+    transform: translate(100px);
+    
+}
+
+.title2 {
+    opacity: 0; 
+    color: white;
+    z-index: 4;
+    background: #000000;
+    position: absolute;
+    top: 30%;
+    left:-100px;
+    padding: 2%;
+    height:fit-content;
+    width: 80%;
+    transition: 1s;
+}
+.title2 h3{
+    margin-top: 0;
+}
+@media screen and (max-width: 600px){
+    .title2 h3{
+        margin-top: 0;
+    }
+    .title2 p{
+        font-size: 10px;
+    }
+    .title2 h3{
+        font-size: 20px;
+    }
+    
+}
+.video {
+    width: fit-content;
+    overflow: hidden;
+    height: fit-content;
+}
+video{
+    width: 100%;
+    height: 100%;
+}
+
+.video-and-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    height: fit-content;
+    width: fit-content;
+}

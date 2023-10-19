@@ -430,6 +430,7 @@ header{
 
 #button-2:hover{
     animation: rotateGradient 3s linear infinite;
+    animation-direction: alternate;
 }
 
 #button-2{
@@ -695,8 +696,8 @@ header{
     
 }
 
-
-.video::before {
+/* 
+.video-and-title{
     content: "";
     position: absolute;
     top: 0;
@@ -704,37 +705,67 @@ header{
     height: 100%;
     left: 0;
     background: #000000;
-    opacity: 0;
+
     transition: opacity 0.3s ease-in-out;
     margin: 0;
     padding: 0;
+} */
+
+.catalog
+{
+    padding: 30px;
 }
 
-.video-and-title:hover::before {
-    opacity: 0.5; /* Измените на желаемое значение прозрачности */
+.video-and-title:hover .title2{
+    opacity: 1; 
+    transform: translate(100px);
+    
 }
 
 .title2 {
-    color: #000000;
-    opacity: 1;
-    display: block;
+    opacity: 0; 
+    color: white;
+    z-index: 4;
+    background: #000000;
     position: absolute;
-    top: 170px;
+    top: 30%;
+    left:-100px;
+    padding: 2%;
+    height:fit-content;
+    width: 80%;
+    transition: 1s;
 }
-
-.title2 p {
-    overflow: visible;
+.title2 h3{
+    margin-top: 0;
 }
-
+@media screen and (max-width: 600px){
+    .title2 h3{
+        margin-top: 0;
+    }
+    .title2 p{
+        font-size: 10px;
+    }
+    .title2 h3{
+        font-size: 20px;
+    }
+    
+}
 .video {
     width: fit-content;
     overflow: hidden;
     height: fit-content;
 }
+video{
+    width: 100%;
+    height: 100%;
+}
 
 .video-and-title {
-    
     position: relative;
     display: flex;
     justify-content: center;
+    padding: 0;
+    margin: 0;
+    height: fit-content;
+    width: fit-content;
 }
