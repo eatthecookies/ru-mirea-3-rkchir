@@ -1,0 +1,217 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    color: #606060;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    /* line-height: 26.743px;  */
+}
+
+
+
+
+header{
+    display: flex;
+    position: relative;
+
+    height: 125px;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+#menu{
+    display: flex;
+
+    height: 62px;
+    width: 1248px;
+
+    align-items: center;
+
+    position: relative;
+}
+
+#menu nav{
+    width: 50%;
+    margin-left: 103px;
+
+}
+#menu nav ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+#menu nav ul li{
+    display: flex;    
+}
+
+#menu a{
+    /* z-index: ; */
+    text-decoration: none;
+    border-style: solid ;
+    border-color: white;
+    line-height: 78px;
+    transition: 0.4s;
+    padding:  0 5px ;
+
+}
+
+#menu a:hover{    
+    border-bottom: #6C5FBC;
+    color: #6C5FBC;
+    border-style: solid ;
+}
+
+#logo{
+    width: 111px;
+    display: flex;
+    flex-direction: row;
+}
+
+#logo p{
+    font-family: 'Martel', serif;
+    font-weight: bold;
+    color: #6C5FBC;
+    font-family: Poppins;
+    font-size: 22px;
+    line-height: 29px;
+    font-weight: bolder;
+}
+
+#img-logo{
+    /* padding-top: 10px; */
+    width: 52px;
+    height: 55px;
+    display: flex;
+}
+
+#container-for-btns{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    right: 0;
+    height: 100%;
+}
+
+#btn-sign-up{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 140px;
+    
+    border-color: white;
+    border-style: solid;
+    border-radius: 6px;
+    height: 40px;
+
+    padding: 25px 40px; 
+
+    background: #6C5FBC;
+
+    align-items: center;
+    /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 1); */
+}
+
+#img-cart{
+    position: absolute;
+    right: 180px;
+    top:16px;
+    filter: drop-shadow(0 0 2px #6C5FBC); 
+}
+
+#btn-sign-up p{
+    color: rgb(255, 255, 255);
+    display: flex;
+    padding-left: 9px;
+}
+
+#img-logout{
+    position: absolute;
+    bottom: 10px;
+    left: 19px;
+}
+
+
+#line{
+    width: 1246px;
+    height: 0.5px;
+    background: #CBCBCB;
+    position: absolute;
+    bottom: -10px;
+    z-index: -1px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #EAEAEA;
+    height: 345px;
+    display: flex;
+    justify-content: center;
+}
+
+#first-footer-menu, #second-footer-menu{
+    display: flex;
+    width: 100%;
+}
+
+#first-footer-menu #logo{
+    position: absolute;
+    left:0;
+}
+
+#first-footer-menu{
+    position: relative;
+    display: flex;
+    width: 1246px;
+    margin-top: 100px;
+    justify-content: flex-end;
+}
+
+#footer-nav ul{
+    list-style: none;  
+    display: flex;
+    gap: 70px;
+    flex-direction: row;  
+    width: fit-content;
+}
+
+#footer-nav li{
+    display: flex;
+}
+
+#footer-nav a{
+    text-decoration: none;
+    
+}
+
+#footer-nav{
+    width: fit-content;
+    height: 58px;
+    line-height: 58px;
+}
+
+#footer-line{
+    width: 1246px;
+    height: 2px;
+    background: #CBCBCB;
+    position: absolute;
+    top: 190px; 
+}
+
+#second-footer-menu{
+    margin-top: 70px;
+    justify-content: flex-end;
+    position: relative;
+}
+
+#copyright{
+    position: absolute;
+    left: 0;
+}
