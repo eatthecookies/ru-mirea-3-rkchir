@@ -909,11 +909,10 @@ main{
 #form{
     position: absolute;
     box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.473);
-    width: 30%;
+    min-width: 400px;
     padding: 60px 40px;
     border-radius: 10px;
     background-color: #e2dcdc50;
-    
 }
 #form::before{
     content: "";
