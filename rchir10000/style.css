@@ -883,20 +883,27 @@ main{
     opacity: 1; 
 }  
 
-/* ─── Страница Войти ─────────────────────────────────────────────────────── */
+/* ─── Страница LOGIN ─────────────────────────────────────────────────────── */
 
 #login-page{
+    display: flex;
+    position: relative;
     min-height: 90vh;
     justify-content: center;
-    
+    width: 1248px;
+    align-items: center;
+    margin-bottom:20px;
 }
 
 #login-page img{
     position: absolute;
-    width: 1248px;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
     z-index: -2;
+    
     filter: hue-rotate(15deg) brightness(60%) ;
+    
 }
 
 #form{
