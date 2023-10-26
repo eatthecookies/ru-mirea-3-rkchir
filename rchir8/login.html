@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="login">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=IBM+Plex+Serif:wght@600&family=Inter&family=Montserrat+Alternates:wght@100;500&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=Poppins:wght@300&family=Roboto&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/log-in.css' rel='stylesheet'>    
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     <title>Магазин мороженого</title>
 </head>
 <body>
@@ -31,7 +30,17 @@
                 
             </div>
             </a>
-
+            <label class="hamburger-menu">
+                <input type="checkbox">
+            </label>
+            
+            <ul class="sidebar">
+                <li><a href="login.html">Войти</a></li>    
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="info.html">О нас</a></li>
+                <li><a href="trash.html">Корзина</a> </li>
+                <li><a href="gallery.html">Галерея</a> </li>
+            </ul>
             <nav>
                 <ul>
                     <li><a href="catalog.html">Каталог</a></li>
@@ -40,9 +49,7 @@
                     <li><a href="gallery.html">Галерея</a></li>
                 </ul>
             </nav>
-            <div id="line">
-
-            </div>
+            
 
             <div id="img-cart">
                 <img src="images/icons8-корзина-64.png" width="30" alt="xz">
@@ -60,118 +67,52 @@
                 
             </div>
         </div>
-    </header>
+        <div id="line">
 
+        </div>
+    </header>
 
     <main>
 
-        <div id="head-container">
+        <div id="login-page">
+            <img src="https://images.thevoicemag.ru/upload/img_cache/71f/71f324714099e5d90a937ea2a683a656_cropped_1332x888.jpg" alt="">
+        
+            <div id="form">
+                <span id="first"></span>
+                <span id="second"></span>
+                <form >
+                    <h1>
+                        Login
+                    </h1>
             
-            <div id="head-text">
-                
-                
-                <div id="over">
-                    <div id="small-line">
-
+                    <div class="input-box">
+                        <input type="text" placeholder="Логин" required>
+                        <i class='bx bxs-user'></i>
                     </div>
-                    <p>Больше 1000 пользователей</p>
-                </div>
-                
-                <p id="enjoy">
-                    Наслаждайтесь мороженым со всего <span>мира</span>
-                </p>
-
-                <p id="help">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, ut nam? Beatae cum ex voluptatem corporis dicta nesciunt hic perferendis, odio, commodi laboriosam culpa explicabo repudiandae excepturi, eveniet optio. Facilis?
-                </p>
-                
-
-                <div id="container-for-btns">
-                
-                    <button id="btn1">
-                        
-                        <p>
-                            Get started
-                        </p>
-                        
-                    </button>
-                    
-                    <button id="btn2">
-                        
-                        <p>
-                           Go pro
-                        </p>
-                        
-                    </button>
-
-                </div>
-                
-            </div>
             
-
-            <div id="head-ice-cream">
-                <img src="images/ice.png" alt="">
+                    <div class="input-box">
+                        <input type="password" placeholder="Пароль" required>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+            
+            
+                    <div class="remember-forgot">
+                        <label> <input type="checkbox"> Запомнить меня</label>
+                        <a href="#">Забыли пароль?</a>
+                    </div>
+            
+                    <button type="submit" class="btn">Login</button>
+            
+                    <div class="register-link">
+                        <p>Еще нет аккаунта?
+                        <a href="#">Зарегистрироваться</a></p>
+                    </div>
+                </form>
             </div>
         </div>
-
-
-        <div id="blocks-of-cards">
-            
-            <div id="block-of-cards-2">
-                <div class="card" id="01">
-                    <span id="circle">
-                        <p>01</p>
-                    </span>
-                    <div class="content">
-                        <h2>
-                            01
-                        </h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsa unde neque? Vitae repellat autem distinctio alias, a cum lum quod illo deleniti aliquam.
-                        </p>
-                        <a href="#">Подробнеe</a>
-                    </div>
-
-
-                </div>
-                <div class="card" id="02">
-                    <span id="circle">
-
-                    </span>
-                    <div class="content">
-                        <h2>
-                            02
-                        </h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsa unde neque? Vitae repellat autem distinctio alias, a cum lum quod illo deleniti aliquam.
-                        </p>
-                        <a href="#">Подробнеe</a>
-                    </div>
-                </div>
-                <div class="card" id="02">
-                    <span id="circle">
-
-                    </span>
-                    <div class="content">
-                        <h2>
-                            03
-                        </h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsa unde neque? Vitae repellat autem distinctio alias, a cum lum quod illo deleniti aliquam.
-                        </p>
-                        <a href="#">Подробнеe</a>
-                    </div>
-                </div>
-            </div>
-            
-            
-        </div>
-        
-            
-        
-
     </main>
 
+    <!-- Нижняя часть сайта -->
     <footer>
         
         <div id="footer-container">
@@ -222,13 +163,14 @@
                     
                 </div>
             </div>
+            
         </div>
         
         <div id="footer-line">
 
         </div>
         <div id="socials-menu">
-
+           
         </div>
 
     </footer>
