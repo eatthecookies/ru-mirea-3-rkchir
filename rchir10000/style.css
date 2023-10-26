@@ -324,9 +324,9 @@ main{
     
 }
 #head-container{
-    display: flex;
-    width:1248px;
-    
+    display: grid;
+    max-width:1248px;
+    grid-template-columns: 1fr 1fr;
 }
 
 #small-line{
@@ -337,7 +337,7 @@ main{
 }
 
 #head-text{
-    width: 624px;
+    max-width: 624px;
     margin-top: 100px;
 }
 
@@ -395,11 +395,12 @@ main{
 }
 
 #head-ice-cream{
-    width: 624px;
+    max-width: 624px;
 }
 
 #head-ice-cream img{
     width: 100%;
+    /* height: 100%; */
     filter: drop-shadow(2px 1px 39px #6000e742); 
 }
 
@@ -893,6 +894,7 @@ main{
     width: 1248px;
     align-items: center;
     margin-bottom:20px;
+    overflow: hidden;
 }
 
 #login-page img{
@@ -912,6 +914,7 @@ main{
     min-width: 400px;
     padding: 60px 40px;
     border-radius: 10px;
+
     background-color: #e2dcdc50;
 }
 #form::before{
@@ -1041,7 +1044,7 @@ main{
     position: absolute;
     top:0;
     right: 0;
-    z-index: 1;
+    z-index: -2;
     pointer-events: none;
 }
 
