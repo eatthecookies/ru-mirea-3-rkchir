@@ -262,6 +262,7 @@ header{
     #first-footer-menu {
         justify-content: center;
     }
+
 }
 
 @media screen and (max-width: 1120px){
@@ -471,8 +472,16 @@ footer ul{
     list-style: none;
 }
 
+footer li a{
+    transition: 0.4s;
+}
+footer li:hover a{
+    color:#6C5FBC;
+}
+
 #about-us{
     grid-area: about-us;
+    padding-right: 40px;
 }
 
 #socials{
@@ -628,7 +637,7 @@ main{
     filter: drop-shadow(2px 1px 39px #6000e742); 
 }
 #head-ice-cream:hover{
-    transform: scale(1.2) rotate(-20deg);
+    transform: scale(1.1) rotate(-20deg);
     filter: drop-shadow(2px 1px 50px #f3e309cc); 
 }
 
@@ -984,7 +993,7 @@ input{
 .input-box input:focus{
     border-color: #7665e6;
     box-shadow: 3px 3px 10px #6000e76c ;
-    transform: scale(1.0);
+    transform: scale(1.04);
 }
 
 
@@ -1133,7 +1142,7 @@ input{
 
     #feedback-form.form{
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(auto-fill, 1fr);
+        grid-template-rows: repeat(7, 1fr);
         gap: 30px
     }
 
@@ -1173,12 +1182,53 @@ input{
         grid-column: 1 / 2;
         grid-row: 7/ 8;  
     }
+    .input-box input::placeholder{
+        color: rgba(255, 255, 255, 0.548);
+        font-size: 13px;
+    }
+    
+}
+@media screen and (max-width: 768px)
+{
+    body{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: "header"
+                            "content"
+                            "footer";
+        
+    }
+
+    .background-form img{
+        display: none;
+    }
+
+    #feedback-form.form {
+        background:#6C5FBC;
+        width:80vw;
+    }
+    #footer-copyright-line p{
+        font-size: 14px;
+    }
+
+    #feedback.form-btn{
+
+        background-color: #1231f5;
+        width: 90%;
+
+    }
+    #head-container{
+        margin: 0 20px;
+    }
+
+
     
 }
 @media screen and (max-width: 800px){
     #footer-nav{
         display: none;
     }
+    
     #copyright{
         display: none;
     }
@@ -1196,11 +1246,29 @@ input{
 }
 
 @media screen and (max-width: 500px){
+    #container-for-btn{
+        display: none;
+    }
     #img-cart{
         display: none;
     }
-    
+    #feedback-form.form {
+        background:#6C5FBC;
+        width:100vw;
+        padding:30px;
+    }
+    #feedback.background-form
+    {
+    padding:10px;
+    }
+    .hamburger-menu{
+        display: flex;
+        position: absolute;
+        right:10%;
+    }
+
 }
+
 
 @media (max-width: 1000px){
     #footer-grid{
@@ -1208,6 +1276,9 @@ input{
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "about-us quick-links "
                              "shop   contact-us"
+    }
+    #about-us{
+        padding-right: 0;
     }
     
 }
@@ -1221,5 +1292,23 @@ input{
                              "shop" 
                              "contact-us"
     }
+    #footer-copyright-line p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px){
+
+    #footer-copyright-line p{
+        font-size: 10px;
+    }
     
+}
+
+
+@media screen and (max-width: 455px){
+
+    #feedback.background-form{
+        /* margin:0; */
+    }
 }
