@@ -1,3 +1,5 @@
+/* ANCHOR Шрифты */
+
 @font-face {
     font-family: IgraSans;
     src: url("fonts/IgraSans.otf") format("opentype");
@@ -56,13 +58,14 @@
     src: url("fonts/Hero.ttf") format("opentype");
 }
 
+
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 
     color: #606060;
-    /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Montserrat Alternates', sans-serif;
     font-family: 'Open Sans';
     /* font-size: calc(9px + 10 * ((100vw - 320px) / (1280 - 320))); */
@@ -85,6 +88,7 @@ body{
     
 }
 
+/* ANCHOR Header */
 
 header{
     display: flex;
@@ -101,9 +105,8 @@ header{
     margin: 0 5%;
     height: 62px;
     width: 100%;
-
+ 
     align-items: center;
-    /* justify-content: center; */
     position: relative;
 }
 
@@ -137,6 +140,8 @@ header{
     color: #6C5FBC;
     border-style: solid ;
 }
+
+/* ANCHOR Hamburger menu */
 
 :root{
     --bar-width: 60px;
@@ -292,14 +297,15 @@ header{
 }
 
 #img-logo{
-    /* padding-top: 10px; */
     width: 52px;
     height: 55px;
     display: flex;
 }
+
 #logo {
     filter: drop-shadow(2px 1px 39px #6000e7a8); 
 }
+
 #container-for-btn{
     display: flex;
     position: absolute;
@@ -326,8 +332,6 @@ header{
     background: #6C5FBC;
     cursor: pointer;
     align-items: center;
-
-    /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 1); */
 }
 
 #btn-sign-up::before{
@@ -343,6 +347,7 @@ header{
     transform: rotate(50deg);
     opacity: 0; 
 }
+
 #btn-sign-up::after{
     content: "";
     position: absolute;
@@ -362,14 +367,8 @@ header{
     transform: rotate(0deg) translateY(0%);
     opacity: 100%;
 }
-#btn-sign-up:hover::after{
-    transform: rotate(0deg) translateY(0%);
-    opacity: 100%;
-}
 
-#btn-sign-up:hover{
-    /* border: #6b5fbc; */
-}
+
 #btn-sign-up:hover p{
     color:#6C5FBC;
 }
@@ -421,10 +420,8 @@ footer{
     --font-size: 19px;
     margin-top: 100px;
     position: relative; 
-    bottom: 0;
-    /* width: 100%; */
+    bottom: 0; 
     background: #EAEAEA;
-    /* height: 345px; */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -530,7 +527,6 @@ footer li:hover a{
 }
 
 #footer-copyright-line{
-    /* position: absolute; */
     bottom: 0;
     display:flex;
     background-color: #201F1F;
@@ -551,7 +547,6 @@ footer li:hover a{
 }
 
 
-
 main{
     display: flex;
     grid-area: content;
@@ -559,6 +554,7 @@ main{
     align-items: center;
     
 }
+
 #head-container{
     display: grid;
     max-width:1500px;
@@ -567,12 +563,9 @@ main{
     padding: 50px 0px;
 }
 
-
-
 #head-text{
     margin-top: 70px;
 }
-
 
 #head-text #enjoy{
     font-family: 'Resist';
@@ -610,7 +603,7 @@ main{
     font-size: calc(10px + 5 * ((100vw - 320px) / (1280 - 320)));
     font-style: normal;
     font-weight: 800;
-    line-height: 120%; /* 18px */
+    line-height: 120%; 
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -625,7 +618,6 @@ main{
 }
 
 #head-ice-cream{
-    /* max-width: 624px; */
     transition: 0.5s;
 }
 
@@ -694,7 +686,7 @@ main{
 
 
 
-/* ─── Страница LOGIN ─────────────────────────────────────────────────────── */
+/* ANCHOR Страница LOGIN  */
 
 .background-form{
     display: flex;
@@ -706,7 +698,6 @@ main{
     margin-bottom:20px;
     overflow: hidden;
 }
-
 
 
 .background-form img{
@@ -769,6 +760,7 @@ main{
 input{
     font-size: 16px;
 }
+
 .input-box input::placeholder{
     color: rgba(255, 255, 255, 0.548);
     font-size: 16px;
@@ -781,7 +773,6 @@ input{
     color:rgba(255, 255, 255, 0.603);
     font-size: 20px;
 }
-
 
 #form .input-box{
     margin: 30px 0;
@@ -955,7 +946,7 @@ input{
     }
 }
 
-/* ────────────────────────────────────────────────────────────────────────── */
+
 #feedback.background-form{
     display: flex;
     position: relative;
@@ -1039,12 +1030,7 @@ input{
 }
 
 
-/* ─── Grid Cards ─────────────────────────────────────────────────────────── */
-
-
-
-
-
+/* ANCHOR Grid Cards ─────────────────────────────────────────────────────────── */
 
 #grid-cards p{
     color:#CBCBCB;
@@ -1073,12 +1059,15 @@ input{
     transition: 0.5s;
     background-color:#6C5FBC;
 }
+
 #grid-cards .box:hover{
     background-color: #ffd900;
 }
+
 #grid-cards .box:hover p{
     color: #6C5FBC;
 }
+
 #grid-cards .box img{
     position: relative;
     max-width: 100px;
@@ -1094,27 +1083,47 @@ input{
     grid-column: span 1;
     grid-row: span 2;
 }
+
 #grid-cards .box:nth-child(3){
     grid-column: span 1;
     grid-row: span 1;
 }
+
 #grid-cards .box:nth-child(4){
     grid-column: span 1;
     grid-row: span 2;
 }
+
 #grid-cards .box:nth-child(5){
     grid-column: span 1 ;
     grid-row: span 1;
 }
+
 #grid-cards .box:nth-child(6){
     grid-column: span 1;
     grid-row: span 1;
 }
+
 #grid-cards .box:nth-child(7){
     grid-column: span 3;
     grid-row: span 1;
 }
 
+#button-page-1
+{
+    padding: 20px;
+    font-size: 40px;
+    background-color: black;
+    color: white;
+    margin-right: 10px;
+}
+#button-page-2
+{
+    padding: 20px;
+    font-size: 40px;
+    background-color: black;
+    color: white;
+}
 
 @media (max-width: 991px){
     #grid-cards{
@@ -1309,4 +1318,4 @@ input{
     #feedback.background-form{
         /* margin:0; */
     }
-}
+}   

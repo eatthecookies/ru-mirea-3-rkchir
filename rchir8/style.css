@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: IgraSans;
     src: url("fonts/IgraSans.otf") format("opentype");
@@ -1118,6 +1119,19 @@ input{
 }
 
 
+@media (max-width: 1000px){
+    #footer-grid{
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "about-us quick-links "
+                             "shop   contact-us"
+    }
+    #about-us{
+        padding-right: 0;
+    }
+   
+
+
 @media (max-width: 991px){
     #grid-cards{
 
@@ -1188,6 +1202,9 @@ input{
     }
     
 }
+
+
+
 @media screen and (max-width: 768px)
 {
     body{
@@ -1220,29 +1237,19 @@ input{
     #head-container{
         margin: 0 20px;
     }
+    
+    #footer-grid{
 
-
-    
-}
-@media screen and (max-width: 800px){
-    #footer-nav{
-        display: none;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "about-us" 
+                             "quick-links "
+                             "shop" 
+                             "contact-us"
     }
     
-    #copyright{
-        display: none;
+    #footer-copyright-line p{
+        font-size: 14px;
     }
-    #first-footer-menu #logo{
-        position: relative;
-        
-    }
-    #first-footer-menu, #second-footer-menu {
-        justify-content: center;
-    }
-    #socials{
-        width: 80%;
-    }
-    
 }
 
 @media screen and (max-width: 500px){
@@ -1268,34 +1275,35 @@ input{
     }
 
 }
-
-
-@media (max-width: 1000px){
-    #footer-grid{
-
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "about-us quick-links "
-                             "shop   contact-us"
+@media screen and (max-width: 800px){
+    #footer-nav{
+        display: none;
     }
-    #about-us{
-        padding-right: 0;
+    
+    #copyright{
+        display: none;
+    }
+    #first-footer-menu #logo{
+        position: relative;
+        
+    }
+    #first-footer-menu, #second-footer-menu {
+        justify-content: center;
+    }
+    #socials{
+        width: 80%;
     }
     
 }
 
-@media (max-width: 768px){
-    #footer-grid{
 
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-areas: "about-us" 
-                             "quick-links "
-                             "shop" 
-                             "contact-us"
-    }
-    #footer-copyright-line p{
-        font-size: 14px;
-    }
+
+
+
+ 
 }
+
+
 
 @media (max-width: 400px){
 
@@ -1303,12 +1311,4 @@ input{
         font-size: 10px;
     }
     
-}
-
-
-@media screen and (max-width: 455px){
-
-    #feedback.background-form{
-        /* margin:0; */
-    }
 }
