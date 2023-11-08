@@ -1,6 +1,6 @@
 "use strict";
 
-const button1 = document.getElementById('button-page-1') ;
+var button1 = document.getElementById('button-page-1') ;
 button1.style.backgroundColor == 'black';
 
 button1.onclick = function(){
@@ -15,29 +15,31 @@ button1.onclick = function(){
 };
 
 
-let isDrawing = false;
-const button2 = document.getElementById('button-page-2') ;
+var button2 = document.getElementById("button-page-2");
+var isDrawing = false;
 
-button2.onclick = function(){
+button2.onclick = function()
+{
     if (!isDrawing) {
         isDrawing = true;
-        button2.textContent = "Прекратить рисование";
-        button2.style.backgroundColor = 'white';
-        button2.style.color = 'black';
-        document.addEventListener("mousemove", drawElement);
+        button2.textContent = "не рисовать";
+        document.addEventListener("mousemove", draw);
     } else {
         isDrawing = false;
-        button2.textContent = "Рисовать";
-        button2.style.backgroundColor = 'black';
-        button2.style.color = 'white';
-        document.removeEventListener("mousemove", drawElement);
+        button2.textContent = "рисовать";
+        document.removeEventListener("mousemove", draw);
     }
 };
 
-function drawElement(event) {
-    const div = document.createElement("div");
-    div.className = "drawn-element";
-    div.style.left = (event.clientX - 10) + "px"; // Offset for better positioning
-    div.style.top = (event.clientY - 10) + "px"; // Offset for better positioning
-    document.body.appendChild(div);
-}
+function draw(e) {
+    var iceCream = document.createElement('img');
+    iceCream.style.position = "absolute";
+    iceCream.style.zIndex = "-1";
+    iceCream.style.left = e.clientX + "px";
+    iceCream.style.top = e.clientY + "px";
+    iceCream.style.width = "64px";
+    iceCream.style.height = "64px";
+    iceCream.src = "images/favicon.png";
+    document.body.appendChild(iceCream);
+};
+    
