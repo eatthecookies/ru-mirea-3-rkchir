@@ -1109,21 +1109,6 @@ input{
     grid-row: span 1;
 }
 
-#button-page-1
-{
-    padding: 20px;
-    font-size: 40px;
-    background-color: black;
-    color: white;
-    margin-right: 10px;
-}
-#button-page-2
-{
-    padding: 20px;
-    font-size: 40px;
-    background-color: black;
-    color: white;
-}
 
 @media (max-width: 991px){
     #grid-cards{
