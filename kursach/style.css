@@ -6,6 +6,16 @@
 }
 
 @font-face {
+    font-family: Manrope;
+    src: url("fonts/Manrope-VariableFont_wght.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: Pusia;
+    src: url("fonts/Pusia-Bold.ttf") format("opentype");
+}
+
+@font-face {
     font-family: Resist;
     src: url("fonts/resist-sans-text-7.otf") format("opentype");
 }
@@ -835,8 +845,25 @@ main{
     display: flex;
     flex-direction:column;
     justify-content: center;
+    position: relative;
 }
+#popular #line{
+    margin-top: 20vh;
+    
+    height: 1px;
+    position: static;
 
+}
+#title, #title span{
+    font-family: Inter;
+    font-size: 45px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 4%;
+}
+ #title span{
+    color: #6C5FBC;
+}
 .cards{
     display: flex;
     flex-direction:row;
@@ -850,24 +877,87 @@ main{
     border: 1.4px solid #F4F4F6;
     background: #FFF;
     box-shadow: 6px 82px 41px 0px rgba(185, 185, 185, 0.7);
-    
+    padding:  30px 23px;
+    position: relative;
+
 }
 #popular .food-image img{
     width: 100%;
     height: 100%;
-    /* object-fit: fill; */
-    filter: drop-shadow(-4px -1px 20px #8d8c8cc5);
+    /* transform: scale(1.4); */
+    filter: drop-shadow(-2px -2px 5px #8d8c8c88);
 }
 #popular .food-image{
-
+    overflow: hidden;
 }
+
+.food-title{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 162%;
+    color:#201F1F;
+    padding-top: 3%;
+}
+.rate{
+    font-family: Manrope;
+    /* font-weight: 600; */
+    font-size: 19px;
+    line-height: 162%;
+    color:  #8E97A6;
+    font-family: Manrope;
+    font-size: 17px;
+
+    font-weight: 400;
+    line-height: 150%; 
+}
+.rate i{
+    color: #6C5FBC;
+    
+}
+
+.price,.price span {
+    /* padding-top: 5%; */
+    color:  #323142;
+    font-family: Manrope;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 155%; 
+}
+.price span{
+    color: #8E97A6;
+    font-size: 18.6px;
+}
+
+.cross{
+    position: absolute;
+    width:40px;
+    height: 40px;
+    right:25px;
+    bottom: 30px;
+}
+
 
 #customer-say{
     grid-area: customer;
     width:100%;
-    margin:5% 0;
+    margin:20vh 0;
+    display: flex;
+    flex-direction: column;
 }
 
+#customer-say .cards{
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    justify-content: space-between;
+    /* gap:10%; */
+}
+#customer-say .card{
+    width: 25%;
+    height: 25%;
+    
+}
 
 
 #coupon{
