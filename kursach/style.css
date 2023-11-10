@@ -556,7 +556,7 @@ main{
     flex-direction: column; 
     align-items: center;
     grid-template-columns: 10% 1fr 10%;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas: 
     " . big-logo . "  
     " wide-line wide-line wide-line "
@@ -654,7 +654,7 @@ main{
 #btn1{
     display: flex;
     
-    border-color: white;
+    border-color: #6C5FBC;
     border-style: solid;
     border-radius: 10px;
     height: 40px;
@@ -662,13 +662,31 @@ main{
     padding: 25px 20px; 
 
     background: #6C5FBC;
-
+    transition: 0.2s;
     align-items: center;
 }
+#btn1:hover
+{
+    background: white;
 
+    
+    && p{
+        color: #6C5FBC;
+    }
+}
+
+#btn2:hover
+{
+    background: #6C5FBC;
+
+    
+    && p{
+        color: white;
+    }
+}
 #btn2{
     display: flex;
-    
+    transition: 0.2s;
     border-color: #6C5FBC;
     border-style: solid;
     border-radius: 10px;
@@ -879,7 +897,8 @@ main{
     box-shadow: 6px 82px 41px 0px rgba(185, 185, 185, 0.7);
     padding:  30px 23px;
     position: relative;
-
+    transition: 0.3s;
+    
 }
 #popular .food-image img{
     width: 100%;
@@ -887,8 +906,19 @@ main{
     /* transform: scale(1.4); */
     filter: drop-shadow(-2px -2px 5px #8d8c8c88);
 }
+#popular .card:hover 
+{
+    transform: translateY(-20px);
+}
+#popular .card:hover .food-image {
+    transform: translateY(-20px) scale(1.2);
+}
+
+
 #popular .food-image{
     overflow: hidden;
+    transition: 0.3s;
+    /* transform: translateY(20px); */
 }
 
 .food-title{
@@ -940,25 +970,139 @@ main{
 
 #customer-say{
     grid-area: customer;
-    width:100%;
-    margin:20vh 0;
-    display: flex;
-    flex-direction: column;
+    /* width:fit-content; */
+    margin:10vh 0;
+    display: grid;
+    /* height: fit-content; */
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
+    gap:30px;
 }
 
 #customer-say .cards{
     display: flex;
-    flex-direction: row;
-    overflow: scroll;
-    justify-content: space-between;
-    /* gap:10%; */
-}
-#customer-say .card{
-    width: 25%;
-    height: 25%;
     
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    
+    grid-column: span 2;
+    padding: 4%;
+    padding-top: 0;
+    
+    
+    &&::-webkit-scrollbar {
+        /* width: 2px; */
+        height: 15px;
+    }
+    &&::-webkit-scrollbar-track {
+        background-color: #6b5fbc3a;
+        
+        border-radius: 50px;
+    }
+    &&::-webkit-scrollbar-thumb {
+        background-color: #6b5fbcb9;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 50px;
+    }
+
 }
 
+
+#customer-say .card, .card-1{
+    flex-shrink: 0;
+    width: fit-content;
+    height: fit-content;
+    
+    /* width: 70%; */
+   
+    border-radius: 34px;
+    border: 1.4px solid #F4F4F6;
+    background: #FFF;
+    box-shadow: 6px 82px 41px 0px rgba(185, 185, 185, 0.7);
+    padding:  30px 33px;
+    position: relative;
+    margin-right: 2% ;
+}
+
+#customer-say .card{
+    height: fit-content;
+    max-width: 460px;
+    /* padding-top: 100px; */
+    padding-bottom: 100px;
+    && #stars{
+        position: absolute;
+        bottom: 15%;
+    }
+    
+    && #stars i{
+        color: #F59E0B;
+        font-size: 25px;
+    }
+}
+
+#customer-say .card p, .card-1 p{
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 26.117px; 
+}
+#customer-say #title{
+    width: 100%;
+    grid-column: span 3;
+    margin: 0;
+    padding: 0;
+}
+.card-1{
+    position: relative;
+    width: 100%;
+    min-height: 346px;
+    height: fit-content;
+    padding-bottom: 90px;
+    && #apostr{
+        position: absolute;
+        top: 15%;
+        right: 15%;
+    }
+    && #stars{
+        position: absolute;
+        bottom: 10%;
+        && i{
+            color: #F59E0B;
+            font-size: 25px;
+        }
+    }
+
+    && #name{
+        font-style: normal;
+        color: #030314;
+        font-family: Inter;
+        font-size: 20.893px;
+        font-style: normal;
+        font-weight: 600;
+        /* line-height: 150%; 150% */
+        position: absolute;
+        
+        left: 130px;
+        top: 69px;
+        
+    }
+    && #avatar{
+        margin-top: 3%;
+        margin-bottom: 30px;
+        display: inline-block;
+        width:70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: #030314;
+        overflow: hidden;
+        && img{
+            transform:  scale(0.3) translate(-850px, -725px);
+            top:0;
+        }
+    }
+}
 
 #coupon{
     overflow: hidden;
@@ -1013,9 +1157,10 @@ main{
     border: none;
     padding: 4%;
     outline: none;
-
+    font-family: Inter;
 }
 .email-input-box button{
+    font-family: Inter;
     top:25%;
     right: 0;
     height: 80%;
@@ -1025,6 +1170,13 @@ main{
     padding: 2% 4%;
     margin-right: 1.5%;
     border: none;
+    transition: 0.1s;
+
+    &&:active {
+        background: #594f9b;
+        transform: translateY(1px);
+        
+    }
 }
 
 #coupon .email-input-box button p{
@@ -1036,6 +1188,7 @@ main{
 /* ANCHOR Страница LOGIN  */
 
 .background-form{
+    grid-column-start: 2  ;
     display: flex;
     position: relative;
     min-height: 90vh;
