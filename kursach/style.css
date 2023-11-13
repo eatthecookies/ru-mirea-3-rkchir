@@ -550,7 +550,7 @@ footer li:hover a{
 }
 
 /* ANCHOR Main */
-main{
+main#index{
     display: grid;
     grid-area: main;
     flex-direction: column; 
@@ -564,7 +564,6 @@ main{
     " . customer . "
     " . coupon . "
     " . form . ";
-
 }
 
 #head-container{
@@ -1448,3 +1447,117 @@ input{
 
 
 /* ANCHOR медиа-запросы */
+
+/* ANCHOR Страница каталога*/
+
+
+main#catalog{
+    display: grid;
+    grid-area: main;
+    align-items: center;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: repeat(3, auto);
+    
+
+    grid-template-areas: 
+    " . header . "  
+    " . categories . ";
+}
+
+
+#catalog-header-img{
+    grid-area: header;
+}
+
+#categories-menu{
+    grid-area: categories;
+}
+
+#products-menu{
+    grid-area: categories; 
+}
+
+.cards{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+#products-menu .card{
+    width: 18%;
+    border-radius: 34px;
+    border: 1.4px solid #F4F4F6;
+    background: #FFF;
+    box-shadow: 6px 82px 41px 0px rgba(185, 185, 185, 0.7);
+    padding:  30px 23px;
+    position: relative;
+    transition: 0.3s;
+    
+}
+#products-menu .food-image img{
+    width: 100%;
+    height: 100%;
+    /* transform: scale(1.4); */
+    filter: drop-shadow(-2px -2px 5px #8d8c8c88);
+}
+#products-menu .card:hover 
+{
+    transform: translateY(-20px);
+}
+#products-menu .card:hover .food-image {
+    transform: translateY(-20px) scale(1.2);
+}
+
+
+#products-menu .food-image{
+    overflow: hidden;
+    transition: 0.3s;
+    /* transform: translateY(20px); */
+}
+
+.food-title{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 162%;
+    color:#201F1F;
+    padding-top: 3%;
+}
+.rate{
+    font-family: Manrope;
+    /* font-weight: 600; */
+    font-size: 19px;
+    line-height: 162%;
+    color:  #8E97A6;
+    font-family: Manrope;
+    font-size: 17px;
+
+    font-weight: 400;
+    line-height: 150%; 
+}
+.rate i{
+    color: #6C5FBC;
+    
+}
+
+.price,.price span {
+    /* padding-top: 5%; */
+    color:  #323142;
+    font-family: Manrope;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 155%; 
+}
+.price span{
+    color: #8E97A6;
+    font-size: 18.6px;
+}
+
+.cross{
+    position: absolute;
+    width:40px;
+    height: 40px;
+    right:25px;
+    bottom: 30px;
+}
