@@ -1655,8 +1655,6 @@ main#info{
 }
 
 #photo{
-
-    
     border-radius: 34px;
     background: #FFF;
     box-shadow: 6px 20px 41px 0px #28263662;
@@ -1664,21 +1662,13 @@ main#info{
     transition: 0.3s;
     width: 60%;
 
-    /* height: 80vh; */
-    /* width: 100%;  */
-    
-    position: relative;
-    /* top: 13%; */
-    /* left: 20%; */
-    /* overflow: hidden; */
     &::before{
         content: "";
         background-color: #6b5fbc;
         width: 160%;
         height: 20vh;
         position: absolute;
-        /* top:0; */
-        /* left: 0; */
+        top:0;
     }
     & img{
         position: relative;
@@ -1704,11 +1694,9 @@ main#info{
     }
 
    
-        
-        /* background-color: ; */
     & #purple-block{
         
-        
+
 
         & #this-is-us{
             position: absolute;
@@ -1717,6 +1705,7 @@ main#info{
             transform: scale(2) rotate(17deg);
             z-index: 10;
         }
+
         & p{
             position: absolute;
             top:-8%;
@@ -1747,3 +1736,176 @@ main#info{
     transition: 0.3s;
     /* margin-top: 80vh; */
 }
+
+
+/* ANCHOR Страница корзины*/
+
+
+main#trash{
+    display: grid;
+    grid-area: main;
+    align-items: center;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: repeat(3, auto);
+    
+
+    grid-template-areas: 
+    " . header . "  
+    " . catalog . ";
+}
+
+
+/* ANCHOR Страница товара*/
+
+
+main#ice1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 5%;
+}
+
+
+#photo-and-desk{
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    width: 100%;
+    & #prod-photo{
+
+        background-color: white;
+        & img{
+            width:100%;
+        }
+    }
+
+
+    & #descript{
+
+    }
+}
+
+
+@media screen and (max-width: 768px)
+{
+    body{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: "header"
+                            "content"
+                            "footer";
+        
+    }
+
+    .background-form img{
+        display: none;
+    }
+
+    #feedback-form.form {
+        background:#6C5FBC;
+        width:80vw;
+    }
+    #footer-copyright-line p{
+        font-size: 14px;
+    }
+
+    #feedback.form-btn{
+
+        background-color: #1231f5;
+        width: 90%;
+
+    }
+    #head-container{
+        margin: 0 20px;
+    }
+
+
+    
+}
+@media screen and (max-width: 800px){
+    #footer-nav{
+        display: none;
+    }
+    
+    #copyright{
+        display: none;
+    }
+    #first-footer-menu #logo{
+        position: relative;
+        
+    }
+    #first-footer-menu, #second-footer-menu {
+        justify-content: center;
+    }
+    #socials{
+        width: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 500px){
+    #container-for-btn{
+        display: none;
+    }
+    #img-cart{
+        display: none;
+    }
+    #feedback-form.form {
+        background:#6C5FBC;
+        width:100vw;
+        padding:30px;
+    }
+    #feedback.background-form
+    {
+    padding:10px;
+    }
+    .hamburger-menu{
+        display: flex;
+        position: absolute;
+        right:10%;
+    }
+
+}
+
+
+@media (max-width: 1000px){
+    #footer-grid{
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "about-us quick-links "
+                             "shop   contact-us"
+    }
+    #about-us{
+        padding-right: 0;
+    }
+    
+}
+
+@media (max-width: 768px){
+    #footer-grid{
+
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "about-us" 
+                             "quick-links "
+                             "shop" 
+                             "contact-us"
+    }
+    #footer-copyright-line p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px){
+
+    #footer-copyright-line p{
+        font-size: 10px;
+    }
+    
+}
+
+
+@media screen and (max-width: 455px){
+
+    #feedback.background-form{
+        /* margin:0; */
+    }
+}   
