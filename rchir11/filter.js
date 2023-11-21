@@ -1,6 +1,6 @@
 a = [1, 2, 3, 4, 5, 6, 7]
 
-function filter(array, a, b){
+function filter1(array, a, b){
     newArray = [];
     for (let i = 0; i < array.length; i++){
         if (a <= array[i] && array[i] <= b){
@@ -10,4 +10,5 @@ function filter(array, a, b){
     return newArray;
 }
 
-console.log(filter(a, 1, 4));
+console.log(filter1(a, 1, 4));
+console.log(a);

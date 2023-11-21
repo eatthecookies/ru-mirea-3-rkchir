@@ -51,7 +51,7 @@ const cardsData = [
     },
 ]
 const arrayAsString = JSON.stringify(cardsData);
-// Пример данных о товарах
+
 const products = {
     1: 0,
     2: 0,
@@ -65,6 +65,5 @@ const products = {
     10: 0,
 };
 
-// Преобразуем объект в строку JSON и сохраняем его в Local Storage
 if (localStorage.getItem('productsData') === null)
     localStorage.setItem('productsData', JSON.stringify(products));

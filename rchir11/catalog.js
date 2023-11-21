@@ -2,8 +2,6 @@ const catalog = document.querySelector(".cards");
 const btnDown = document.getElementById("down-to");
 const btnUp = document.getElementById("to-up");
 
-
-
 function compareByCost(a, b){
     if (a.cost > b.cost) return 1;
     if (a.cost == b.cost) return 0;
