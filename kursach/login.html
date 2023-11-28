@@ -33,25 +33,27 @@
             </label>
             
             <ul class="sidebar">
+                <li><a href="index.html">Главная</a></li>  
                 <li><a href="login.html">Войти</a></li>    
                 <li><a href="catalog.html">Каталог</a></li>
                 <li><a href="info.html">О нас</a></li>
                 <li><a href="trash.html">Корзина</a> </li>
-                <li><a href="gallery.html">Галерея</a> </li>
             </ul>
+
             <nav>
                 <ul>
+                    <li><a href="index.html">Главная</a></li>  
                     <li><a href="catalog.html">Каталог</a></li>
                     <li><a href="info.html">О нас</a></li>
-                    <li><a href="trash.html">Корзина</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="trash.html">Корзина</a> </li>
+
                 </ul>
             </nav>
             
 
             <div id="img-cart">
-                <img src="images/icons8-корзина-64.png" width="30" alt="xz">
-            </div>            
+                <a href="trash.html"><img src="images/icons8-корзина-64.png" width="30" alt="xz"></a>
+            </div>        
             <div id="container-for-btn">
                 
                 
@@ -65,9 +67,7 @@
                 
             </div>
         </div>
-        <div id="line">
 
-        </div>
     </header>
 
     <main>
@@ -84,23 +84,47 @@
                     </h1>
             
                     <div class="input-box">
-                        <input type="text" placeholder="Логин" required>
+                        <input type="text" placeholder="Логин">
                         <i class='bx bxs-user'></i>
                     </div>
             
                     <div class="input-box">
-                        <input type="password" placeholder="Пароль" required>
+                        <input type="password" placeholder="Пароль">
                         <i class='bx bxs-lock-alt'></i>
                     </div>
             
-            
+                    
+
                     <div class="remember-forgot">
                         <label> <input type="checkbox"> Запомнить меня</label>
                         <a href="#">Забыли пароль?</a>
                     </div>
             
-                    <button type="submit" class="form-btn">Login</button>
-            
+                    <div id="capcha-image">
+                        dw
+                    </div>
+                    
+                    <div id="inp-btn1">
+                        <div class="input-box">
+                            <input id="capcha-input" type="text" placeholder="capcha" required>
+                            <i class='bx bxs-lock-alt'></i>
+                        </div>
+    
+                        <button id="inp-btn" type="button"  class="capcha-btn">Check</button>
+                    </div>
+                    <script src="capcha.js"></script>
+                    
+                    
+
+                    <button type="submit" id="sbm-btn" class="form-btn" disabled>Login</button>
+                    <script>
+                        const btn = document.getElementById("sbm-btn");
+                
+                        btn.addEventListener("click", function(e){
+                                alert("Вы вошли на сайт!");
+                            })
+                            
+                    </script>
                     <div class="register-link">
                         <p>Еще нет аккаунта?
                         <a href="#">Зарегистрироваться</a></p>
@@ -151,12 +175,10 @@
                     <div class="small-line"></div>
                 </div>
                 <ul id="list-of-links">
-                    <li><a href="login.html">Блог</a></li>    
+                    <li><a href="index.html">Главная</a></li>  
+                    <li><a href="catalog.html">Каталог</a></li>
                     <li><a href="info.html">О нас</a></li>
-                    <li><a href="trash.html">Контакты</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
-                    <li><a href="trash.html">Контакты</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="trash.html">Корзина</a> </li>
                 </ul>
             </div>
     
@@ -166,12 +188,10 @@
                     <div class="small-line"></div>
                 </div>
                 <ul class="list-of-shop">
-                    <li><a href="trash.html">Контакты</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
-                    <li><a href="login.html">Блог</a></li>    
                     <li><a href="info.html">О нас</a></li>
-                    <li><a href="trash.html">Контакты</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="index.html">Главная</a></li>  
+                    <li><a href="trash.html">Корзина</a> </li>
                 </ul>
             </div>
     

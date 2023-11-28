@@ -37,23 +37,26 @@
             </label>
             
             <ul class="sidebar">
+                <li><a href="index.html">Главная</a></li>  
                 <li><a href="login.html">Войти</a></li>    
                 <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="info.html">О нас</a></li>
                 <li><a href="trash.html">Корзина</a> </li>
             </ul>
 
             <nav>
                 <ul>
+                    <li><a href="index.html">Главная</a></li>  
                     <li><a href="catalog.html">Каталог</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Корзина</a></li>
-                    <li><a href="#">Галерея</a></li>
+                    <li><a href="info.html">О нас</a></li>
+                    <li><a href="trash.html">Корзина</a> </li>
+
                 </ul>
             </nav>
             
 
             <div id="img-cart">
-                <a href="login.html"><img src="images/icons8-корзина-64.png" width="30" alt="xz"></a>
+                <a href="trash.html"><img src="images/icons8-корзина-64.png" width="30" alt="xz"></a>
             </div>            
 
 
@@ -75,13 +78,41 @@
     </header>
 
     <main id="trash">
+        <div id="result">
+            <div id="text">
+                <p>
+                    Всего:</br>
+                </p>
+                <p id="result-cost">
+                    150
+                </p>
+                
+                <p><span>руб.</span></p>
+            </div>
+                
+            
+            <button id="btn-ex">
+                Перейти к оформлению
+            </button>
+       </div>
+       <div id="trash-cards">
+        
+       </div>
        
-      
     </main>
 
+    <script src="database.js"></script>
+    <script src="trash.js"></script>
+    <script src="trash-counter.js"></script>
+    <script>
+        const btn = document.getElementById("btn-ex");
 
-    <footer>
-        
+        btn.addEventListener("click", function(e){
+                alert("Успех");
+            })
+
+    </script>
+    <footer>    
         <div id="footer-grid">
             <div id="about-us">
                 <div class="title">
@@ -120,12 +151,10 @@
                     <div class="small-line"></div>
                 </div>
                 <ul id="list-of-links">
-                    <li><a href="login.html">Блог</a></li>    
+                    <li><a href="index.html">Главная</a></li>  
+                    <li><a href="catalog.html">Каталог</a></li>
                     <li><a href="info.html">О нас</a></li>
-                    <li><a href="trash.html">Контакты</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
-                    <li><a href="trash.html">Контакты</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="trash.html">Корзина</a> </li>
                 </ul>
             </div>
     
@@ -135,12 +164,10 @@
                     <div class="small-line"></div>
                 </div>
                 <ul class="list-of-shop">
-                    <li><a href="trash.html">Контакты</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
-                    <li><a href="login.html">Блог</a></li>    
                     <li><a href="info.html">О нас</a></li>
-                    <li><a href="trash.html">Контакты</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="index.html">Главная</a></li>  
+                    <li><a href="trash.html">Корзина</a> </li>
                 </ul>
             </div>
     
