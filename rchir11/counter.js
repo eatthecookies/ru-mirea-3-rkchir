@@ -25,3 +25,4 @@ productCards.forEach(function(card) {
     });
 
 });
+

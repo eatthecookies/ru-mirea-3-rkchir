@@ -4,6 +4,7 @@ const resultCost = document.getElementById("result-cost")
 function generateCards(cardsData){
     const cards = [];
     let price = 0;
+    
     for (let i = 0; i < cardsData.length; i++){
         
         let quantity = JSON.parse(localStorage.getItem('productsData'))[i+1]
