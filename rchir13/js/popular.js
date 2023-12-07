@@ -34,6 +34,7 @@ function generateCards(cardsData){
 
 catalog.innerHTML = generateCards(cardsData).join("");
 
+
 const productCards = document.querySelectorAll('.card');
 
 productCards.forEach(function(card) {
@@ -41,6 +42,7 @@ productCards.forEach(function(card) {
     const quantityP = card.querySelector('#quantity');
     const increaseQuantityBtn = card.querySelector('#plus');
     const decreaseQuantityBtn = card.querySelector('#minus');
+    
     
     increaseQuantityBtn.addEventListener('click', function() {
         const storedProducts = JSON.parse(localStorage.getItem('productsData'));

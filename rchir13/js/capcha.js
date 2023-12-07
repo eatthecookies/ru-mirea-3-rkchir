@@ -1,3 +1,4 @@
+"use strict";
 
 // Генерация случайной буквы верхнего или нижнего регистра
 function randomLetter() {
@@ -9,6 +10,8 @@ function randomLetter() {
     return randomLetter;
 }
   
+
+
 var capcha = document.getElementById("capcha-image");
 capcha.textContent = randomLetter() + randomLetter() + randomLetter() + randomLetter();
 
@@ -16,8 +19,10 @@ function isEmpty(obj){
     return obj.value.trim() === "";
 }
 
+
 let inputButton = document.getElementById("inp-btn");
 inputButton.addEventListener("click", checkInput);
+
 
 function checkInput(){
     inputButton.removeEventListener("click", checkInput);
@@ -49,6 +54,7 @@ function checkInput(){
     }
     
 }
+
 
 function checkMath(res){
     

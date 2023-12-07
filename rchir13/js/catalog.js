@@ -1,3 +1,7 @@
+
+
+
+
 function compareByCost(a, b){
     if (a.cost > b.cost) return 1;
     if (a.cost == b.cost) return 0;
@@ -59,6 +63,25 @@ function generateCategory(categoryId, category){
     })
 }
 
-generateCategory("fructs", "фруктовые");
-generateCategory("shoko", "шоколадные");
-generateCategory("cofe", "кофейные и ореховые");
+document.addEventListener("scroll", function(){
+    let scrollVal = window.scrollY;
+    let cofe = document.getElementById("cofe");
+    let fructs = document.getElementById("fructs");
+    let shoko = document.getElementById("shoko");
+
+    console.log(cofe.getBoundingClientRect().top-100);
+    console.log(cofe.getBoundingClientRect().top-100);
+    console.log(cofe.getBoundingClientRect().top-100);
+    if (0 > (cofe.getBoundingClientRect().top-500)){
+        generateCategory("cofe", "кофейные и ореховые");
+    }
+    if (0 > (fructs.getBoundingClientRect().top-500)){
+        generateCategory("fructs", "фруктовые");
+    }
+    if (0 > (shoko.getBoundingClientRect().top-500)){
+        generateCategory("shoko", "шоколадные");
+    }
+})
+
+// generateCategory("fructs", "фруктовые");
+// generateCategory("shoko", "шоколадные");

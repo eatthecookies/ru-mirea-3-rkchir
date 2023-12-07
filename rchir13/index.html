@@ -52,7 +52,7 @@
                     <li><a href="trash.html">Корзина</a> </li>
                 </ul>
             </nav>
-            
+           
 
             <div id="img-cart">
                 <a href="trash.html"><img src="images/icons8-корзина-64.png" width="30" alt="xz"></a>
@@ -161,8 +161,9 @@
 
             </div>
         </div>
-        <script src="js/counter.js"></script> 
+        
         <script src="js/database.js"></script> 
+        <script src="js/counter.js"></script>  
         <script src="js/popular.js"></script>
         
 
@@ -178,7 +179,7 @@
                     Александр В.
                 </p>
                 <div id="avatar">
-                    <img src="images/Снимок экрана 2023-12-05 161134.png" alt="">
+                    <img src="images/Снимок экрана 2023-11-10 203137.png" alt="">
                 </div>
                 
                 <p>"Это лучшее мороженое, которое я когда-либо пробовал! Заказал разные вкусы, и каждый из них просто великолепен. Отличное качество, быстрая доставка, я в восторге!"</p>
@@ -194,6 +195,14 @@
                 </div>
             </div>
 
+            <script>
+                function truncate(str, maxlength){
+                    if(str.length <= maxlength) return str;
+                    let truncated = str.substring(0, maxlength - 3);
+                    return truncated + "..." ; 
+                }
+                let maxlength = 100;
+            </script>
 
             <div class="cards">
                 <div class="card" id="1-card">
@@ -263,7 +272,45 @@
         </div>
 
 
+        <!-- <div class="background-form" id="feedback">
+            <img src="https://images.thevoicemag.ru/upload/img_cache/71f/71f324714099e5d90a937ea2a683a656_cropped_1332x888.jpg" alt="">
+            
+            <form class="form" id="feedback-form">
+            
+                <h1 class="h1-form">
+                    Отзыв
+                </h1>
+                <div class="input-box" id="feedback-form">
+                    <input type="text" placeholder="Имя" required>
+                    <i class='bx bxs-user'></i>
+                </div>
         
+                <div class="input-box" id="feedback-form">
+                    <input type="text" placeholder="Фамилия" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+    
+                <div class="input-box" id="feedback-form">
+                    <input type="text" placeholder="Почта" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+    
+                <div class="input-box" id="feedback-form">
+                    <input type="text" placeholder="Телефон" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+    
+                <div class="input-box" id="feedback-form">
+                    <input type="text" placeholder="Напишите Ваше сообщение " required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+        
+                
+                <button type="submit" id="feedback" class="form-btn">Отправить</button>
+        
+                
+            </form>
+        </div> -->
     </main>
 
 
@@ -277,7 +324,7 @@
                 </div>
                 <div id="text">
                     <p>
-                        Наше мороженое создается с любовью и страстью к натуральным ингредиентам, чтобы доставить вам неповторимое удовольствие. 
+                        Наше мороженое создается с любовью и страстью к натуральным ингредиентам, чтобы доставить вам неповторимое удовольствие. Мы гордимся качеством и свежестью наших продуктов, и наша миссия - подарить вам настоящее летнее настроение в каждой порции мороженого.
                     </p>
                 </div>
                 
@@ -314,7 +361,18 @@
                 </ul>
             </div>
     
-
+            <div id="shop">
+                <div class="title">
+                    <h2>Магазин</h2>
+                    <div class="small-line"></div>
+                </div>
+                <ul class="list-of-shop">
+                    <li><a href="info.html">О нас</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="index.html">Главная</a></li>  
+                    <li><a href="trash.html">Корзина</a> </li>
+                </ul>
+            </div>
     
     
             <div id="contact-us">
@@ -337,7 +395,7 @@
         
 
         <div id="footer-copyright-line">
-            <p>Воробьев Александр ИКБО-20-22. РТУ МИРЭА - 2023</p>
+            <p>Copyright@2023 Student MIREA. All Rigts Reserved</p>
         </div>
        
 
