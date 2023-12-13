@@ -1,33 +1,36 @@
 let slider = document.getElementById("slide");
 let line = document.getElementById("line-way");
+let main = document.getElementById("main-list");
 
+document.addEventListener('DOMContentLoaded', function ()
+{
 
-slider.onmousedown = function(event) {
-    let shiftX = event.pageX - slider.getBoundingClientRect().left;
+    let isDragging = false;
 
-    
-    slider.style.position = "absolute";
-    slider.style.zIndex = 1000;
-    document.body.append(slider);
+    slider.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        slider.style.cursor = 'grabbing';
+    });
 
-    moveAt(event.pageX);
-    
-    function moveAt(pageX) {
-        let move = pageX - shiftX;
-        if (move >= line.getBoundingClientRect().left && move <= line.getBoundingClientRect().right - slider.offsetWidth) {
-            slider.style.left = move + 'px';
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        slider.style.cursor = 'grab';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        const sliderRect = line.getBoundingClientRect();
+        let newPosition = e.clientX - sliderRect.left;
+
+        // Ограничиваем положение бегунка в пределах слайдера
+        if (newPosition < 0) {
+            newPosition = 0;
+        } else if (newPosition > sliderRect.width - slider.clientWidth) {
+            newPosition = sliderRect.width - slider.clientWidth;
         }
-    }
 
-    function onMouseMove(event) {
-        moveAt(event.pageX);
-    }
-
-    document.addEventListener('mousemove', onMouseMove);
-    
-    slider.onmouseup = function() {
-        document.removeEventListener('mousemove', onMouseMove);
-        slider.onmouseup = null;
-    };
-};
+        slider.style.left = newPosition + 'px';
+    });
+});
 

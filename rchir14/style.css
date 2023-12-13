@@ -1691,11 +1691,20 @@ main#catalog{
 }
 
 #catalog-header-img #catalog-title{
-   
+    position: relative;
     padding-top: 50px;
     transform: translateY(-10%) translateX(10%);
     
 }
+
+#title i{
+   font-size: inherit;
+    color: #6b5fbc;
+    position: absolute;
+    left: 10%;
+    line-height: 48px;
+}
+
 #catalog-header-img #catalog-title p{
     hyphens: auto;
     font-family: 'Gilroy';
@@ -2656,13 +2665,13 @@ main#main-list #slider{
 }
 #slide{
     position: absolute;
-    top:485px;
+    top:-15px;
     left: 0;
     background-color: #6b5fbc;
     width: 15px;
     height: 50px;
     border-radius: 5px;
-    cursor: grab;
+
 }
 main#main-list #line-way{
     background-color: #e4e2e2;

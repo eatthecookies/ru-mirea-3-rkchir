@@ -22,8 +22,8 @@ function generateCards(cardsData, sort, category){
         if (element.category == category){
             let quantity = JSON.parse(localStorage.getItem('productsData'))[element.id];
 
-            cards.push(`<div class="card" data-product-id=${element.id}>
-                            <div class="food-image"><img src="images/red/${element.png}" alt=""></div>
+            cards.push(`<div class="card" data-product-id=${element.id} draggable="true">
+                            <div class="food-image"><img draggable="false" src="images/red/${element.png}" alt=""></div>
                             
                             <p class="food-title">${element.title}</p>
                             <p class="rate"><i class='bx bxs-star'></i>${element.rate} </p>
