@@ -1,7 +1,3 @@
-
-
-
-
 function compareByCost(a, b){
     if (a.cost > b.cost) return 1;
     if (a.cost == b.cost) return 0;
@@ -23,6 +19,7 @@ function generateCards(cardsData, sort, category){
             let quantity = JSON.parse(localStorage.getItem('productsData'))[element.id];
 
             cards.push(`<div class="card" data-product-id=${element.id} draggable="true">
+                            <p id="added" > В корзине </p>
                             <div class="food-image"><img draggable="false" src="images/red/${element.png}" alt=""></div>
                             
                             <p class="food-title">${element.title}</p>
@@ -63,25 +60,7 @@ function generateCategory(categoryId, category){
     })
 }
 
-document.addEventListener("scroll", function(){
-    let scrollVal = window.scrollY;
-    let cofe = document.getElementById("cofe");
-    let fructs = document.getElementById("fructs");
-    let shoko = document.getElementById("shoko");
 
-    console.log(cofe.getBoundingClientRect().top-100);
-    console.log(cofe.getBoundingClientRect().top-100);
-    console.log(cofe.getBoundingClientRect().top-100);
-    if (0 > (cofe.getBoundingClientRect().top-500)){
-        generateCategory("cofe", "кофейные и ореховые");
-    }
-    if (0 > (fructs.getBoundingClientRect().top-500)){
-        generateCategory("fructs", "фруктовые");
-    }
-    if (0 > (shoko.getBoundingClientRect().top-500)){
-        generateCategory("shoko", "шоколадные");
-    }
-})
-
-// generateCategory("fructs", "фруктовые");
-// generateCategory("shoko", "шоколадные");
+generateCategory("cofe", "кофейные и ореховые");
+generateCategory("fructs", "фруктовые");
+generateCategory("shoko", "шоколадные");

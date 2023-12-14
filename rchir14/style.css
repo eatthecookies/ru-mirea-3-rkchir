@@ -863,6 +863,7 @@ main#index{
     text-align: center;
     font-weight: 600;
     margin-bottom: 2%;
+    transition:transform  1.2s;
 }
 #title span{
     color: #6C5FBC;
@@ -1699,11 +1700,29 @@ main#catalog{
 
 #title i{
    font-size: inherit;
+   display: inline;
     color: #6b5fbc;
     position: absolute;
     left: 10%;
     line-height: 48px;
+    z-index: 1000;
 }
+.is-dragging{
+    animation: updown 1.3s ease-in-out infinite;
+}
+@keyframes updown {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    
+}
+
 
 #catalog-header-img #catalog-title p{
     hyphens: auto;
@@ -1804,6 +1823,8 @@ main#catalog{
     gap:4%;
 
 }
+
+
  /* ANCHOR */
 #catalog .cards .card{
     display: flex;
@@ -1819,7 +1840,29 @@ main#catalog{
     transition: 0.3s;
     z-index: 10;
     margin-top: 30px;
-    
+    overflow: hidden;
+}
+
+#ripple{
+    position: absolute;
+    background-color: #6b5fbc;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    opacity: 0.2;
+}
+#added{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    /* margin-left: 19%; */
+    background-color: rgb(5, 170, 5);
+    color: white;
+    padding: 10px 20px;
+    top: -60px;
+    border-radius: 14px;
+    font-family: Comfortaa;
+    font-size: 30px;
+    align-self: center;
 }
 
 #catalog .cards .card:hover 
